@@ -58,7 +58,7 @@
         },
         {
             "key": "field_5c66bfab71e69",
-            "label": "Image \/ Colour",
+            "label": "Image \/ Video",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -71,6 +71,31 @@
             },
             "placement": "left",
             "endpoint": 0
+        },
+        {
+            "key": "field_5d235b4c33825",
+            "label": "Background Type",
+            "name": "background_type",
+            "type": "select",
+            "instructions": "Select the type of background to display. Image or Video.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image": "Image",
+                "video": "Video"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
         },
         {
             "key": "field_5c619fd480228",
@@ -97,10 +122,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_5c619fe080229",
-            "label": "Colour Scheme",
-            "name": "colour_scheme",
-            "type": "select",
+            "key": "field_5d235b2133824",
+            "label": "Background Video",
+            "name": "background_video",
+            "type": "oembed",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -109,140 +134,8 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "blue": "Blue",
-                "black": "Black"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5c66bfbd71e6a",
-            "label": "Button",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5c619fba80226",
-            "label": "Button Text",
-            "name": "button_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5c619fc680227",
-            "label": "Button Link Type",
-            "name": "button_link",
-            "type": "select",
-            "instructions": "Choose if you are linking to an internal page (within the current website) or an external page (different website)",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5c619fba80226",
-                        "operator": "!=empty"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "internal": "Internal Link",
-                "external": "External Link"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5c66b8e5e4fc3",
-            "label": "Button Link",
-            "name": "button_link_internal",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5c619fc680227",
-                        "operator": "==",
-                        "value": "internal"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "post",
-                "page",
-                "showcase"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
-            "key": "field_5c66b90de4fc4",
-            "label": "Button Link",
-            "name": "button_link_external",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5c619fc680227",
-                        "operator": "==",
-                        "value": "external"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "width": "",
+            "height": ""
         }
     ],
     "location": [
@@ -251,16 +144,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
-                "value": "37"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
-                "value": "35"
             }
         ]
     ],
@@ -272,5 +155,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1550509299
+    "modified": 1562598328
 }
