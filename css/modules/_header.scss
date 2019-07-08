@@ -1,0 +1,93 @@
+
+// Header
+header {
+  // background: none;
+  .site-title {
+    margin: 25px 0px;
+  }
+  nav.primary {
+    display: none;
+    font: $normal 1.2rem/1.4rem $bold;
+    text-transform: uppercase;
+    ul {
+      text-align: right;
+      margin: 10px 0px;
+      li {
+        display: inline-block;
+        &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-category-ancestor a, a:hover {
+          color: $white;
+          padding: 20px 5px;
+        }
+        a {
+          @include transition(all 0.2s ease-out);
+          line-height: 1.4rem;
+          display: inline-block;
+          color: $white;
+          text-decoration: none;
+          margin: 0px 5px;
+          padding: 20px 5px;
+        }
+      }
+    }
+    @media (min-width: $breakpoint-tablet) {
+      display: block;
+    } 
+  }
+  .mobile_menu {
+    background: url('../img/mobile_menu_icon.png') no-repeat center 22px $white;
+    width: 10%;
+    width: 82px;  
+    height: 82px;
+    float: left;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    display: none;
+    color: $white;
+    text-align: center;
+    display: block;
+    font: $normal 1.2rem/1.2rem $regular;
+    text-transform: uppercase;
+    @media (min-width: $breakpoint-tablet) {
+      display: none;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      right: 0px;
+    } 
+  }
+}
+nav.mobile {
+  display: none;
+  position: absolute;
+  top: 82px;
+  background: $white;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 5px solid $white;
+  ul {
+    text-align: left;
+    margin: 30px 0px;
+    li {
+      text-align: center;
+      display: block;
+      margin: 15px 0px;
+      &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-category-ancestor a, a:hover {
+        color: $black;
+        padding: 15px 0px;
+        border-bottom: 1px solid $black;
+      }
+      a {
+        @include transition(all 0.2s ease-out);
+        line-height: 1.4rem;
+        display: inline-block;
+        color: $white;
+        text-decoration: none;
+        margin: 0px 10px;
+        padding: 15px 0px;
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+}

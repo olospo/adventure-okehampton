@@ -1,0 +1,21 @@
+// main.scss
+@import 'base/skeleton'; // CSS Skeleton
+@import 'base/reset'; // CSS Resets
+@import 'base/fonts'; // Fonts
+@import 'base/mixins'; // Mixins
+@import 'base/general'; // General styles
+@import 'base/buttons'; // Buttons
+
+// Modules
+@import 'modules/header'; // Header
+@import 'modules/footer'; // Footer
+@import 'modules/components'; // Components
+
+// Pages
+@import 'pages/home'; // Home
+@import 'pages/news'; // News
+@import 'pages/contact'; // Contact
+
+// Other
+@import 'vendor/slick'; // Slick Slider
+@import 'vendor/fancybox'; // Fancybox

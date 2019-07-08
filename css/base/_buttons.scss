@@ -1,0 +1,15 @@
+/* Buttons */
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font: $normal 1.8rem/2.8rem $regular;
+  text-decoration: none;
+  background: $white;
+  color: $black;
+  &:hover {
+    text-decoration: none;
+    background: $black;
+    color: $white;
+  }
+}

@@ -1,0 +1,53 @@
+{
+    "key": "group_5c640b7d927f8",
+    "title": "Article Author",
+    "fields": [
+        {
+            "key": "field_5c640b82f048f",
+            "label": "Author",
+            "name": "author",
+            "type": "post_object",
+            "instructions": "Select the profile to attribute the article to.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "profile"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "format"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1550063035
+}
