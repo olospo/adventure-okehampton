@@ -1,12 +1,44 @@
 // Home
 
+form {
+  text-align: center;
+  select {
+    display: inline-block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    padding: .7em 5.4em .7em .7em;
+    box-sizing: border-box;
+    margin: 10px 10px 10px 0;
+    font: $normal 2.4rem/3.2rem $headline;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+  }
+  input[type="submit"] {
+    margin: 10px 10px 10px 0;
+    padding: .7em 3.4em .7em .7em;
+    font: $normal 2.4rem/3.2rem $headline;
+    border: none;
+    background: $red;
+    color: $white;
+  }
+}
+
 .testimonial {
   text-align: center;
   background: $green;
   padding: $padding 0;
   blockquote {
     border: none;
-    font: $normal 5.2rem/5.6rem $headline;
+    p {
+      display: inline-block;
+      font: $normal 5.2rem/5.6rem $headline;
+      margin-bottom: 20px;
+    }
     footer {
       font: $normal 2.4rem/3.2rem $regular;
     }
@@ -14,9 +46,11 @@
 }
 
 .activities-list {
+  text-align: center;
   padding: $padding 0;
   color: $red;
   h2 {
     color: $red;
+    font: $normal 5.2rem/5.6rem $headline;
   }
 }

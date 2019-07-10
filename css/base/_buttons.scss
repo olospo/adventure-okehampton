@@ -2,14 +2,16 @@
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  font: $normal 1.8rem/2.8rem $regular;
+  padding: 15px 50px;
+  font: $normal 2.2rem/2.8rem $headline;
   text-decoration: none;
   background: $white;
   color: $black;
+  border: none;
   &:hover {
     text-decoration: none;
-    background: $black;
-    color: $white;
+    // background: $black;
+    // color: $white;
+    border: none;
   }
 }

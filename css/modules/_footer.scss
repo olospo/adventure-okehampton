@@ -4,17 +4,34 @@
   article {
     &.blue {
       background: $blue;
+      a.button {
+        color: $blue;
+      }
     }
     &.red {
       background: $red;
+      a.button {
+        color: $red;
+      }
     }
     &.green {
       background: $green;
+      a.button {
+        color: $green;
+      }
     }
     .content {
       color: $white;
       text-align: center;
       padding: 30px;
+      h3 {
+        font: $normal 3.2rem/4.0rem $headline;
+        margin-bottom: 30px;
+      }
+      p {
+        font: $normal 1.8rem/2.8rem $regular;
+        margin-bottom: 30px;
+      }
       a.button {
         display: block;
       }
@@ -24,10 +41,28 @@
 .social {
   padding: $padding 0;
   background: $red;
+  color: $white;
+  h3 {
+    text-align: center;
+    font: $normal 6.0rem/6.0rem $headline;
+    margin-bottom: 60px;
+  }
+  h4 {
+    font: $normal 3.4rem/4.0rem $headline;
+    color: $white;
+    border-bottom: 1px solid $white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
 }
 .newsletter {
   padding: $padding 0;
   background: $green;
+  text-align: center;
+  h3 {
+    font: $normal 3.2rem/4.0rem $headline;
+  }
+  
 }
 footer {
   &.links {

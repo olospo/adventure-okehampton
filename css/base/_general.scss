@@ -48,7 +48,8 @@ img {
 }
 
 p {
-  margin-bottom: 20px;
+  font: $normal 1.8rem/2.8rem $regular;
+  margin-bottom: 27px;
   &:last-child {
     margin-bottom: 0px;
   }

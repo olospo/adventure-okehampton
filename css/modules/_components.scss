@@ -7,14 +7,15 @@ section.hero{
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  padding: 200px 0px;
+  padding: 160px 0px;
   .content {
     h1 {
       text-align: center;
-      font: $normal 7.0rem/7rem $headline;
-      font-size: 7.0rem;
-      line-height: 7rem;
+      font: $normal 9.0rem/9rem $headline;
+      font-size: 9.0rem;
+      line-height: 9rem;
       color: $white;
+      margin-bottom: 40px;
       @media (max-width: $breakpoint-tablet) {
         font: $normal 4.2rem/5.2rem $headline;
       }
