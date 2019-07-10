@@ -1,6 +1,23 @@
 // Footer
+.quick-links {
+  padding: $padding 0;
+}
+.social {
+  padding: $padding 0;
+  background: $red;
+}
+.newsletter {
+  padding: $padding 0;
+  background: $green;
+}
 footer {
-  padding: $padding 0px;
-  color: $white;
-  background: transparent;
+  &.social-links {
+    padding: $padding 0px;
+    color: $white;
+    background: $black;
+  }
+  &.accreditations {
+    background: $buff;
+    padding: $padding 0px;
+  }
 }

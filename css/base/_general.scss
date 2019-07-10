@@ -9,7 +9,7 @@ $normal: normal;
 $white: #fff;
 $black: #090018;
 $red: #D3205C;
-$green: #7F7F47;
+$green: #80b048;
 $blue: #393C8D;
 
 // Secondary
@@ -64,9 +64,9 @@ body {
   font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.8;
   font-family: $regular;
-  color: $white;
+  color: $black;
   -webkit-font-smoothing: antialiased; // Fix fonts looking rubbish in Chrome
-  background: $black;
+  background: $buff;
 }
 
 // Page 
