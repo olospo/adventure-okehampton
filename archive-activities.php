@@ -12,16 +12,10 @@ get_header(); ?>
       <div class="main_content">
         <div class="twelve columns">
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <article class="standard one-third column">
-            <div class="item_image">
-              <a href="<?php the_permalink(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/thumbnail-pattern.png" style="background: url(<?php the_post_thumbnail_url( 'featured-img' ); ?>) center center black; background-size: cover;" >
-              </a>
-            </div>
-            <div class="item_content">
-              <div class="content">
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-              </div>
+          <article class="red one-third column">
+            <img src="https://via.placeholder.com/400x200" />
+            <div class="content">
+              <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             </div>
           </article>
         <?php endwhile; ?>

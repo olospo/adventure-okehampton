@@ -1,26 +1,41 @@
 <?php /* Footer */ ?>
 <section class="quick-links">
   <div class="container">
-    <div class="one-third column">
-      <h4>About Us</h4>
-      <p>Now booking for our 2019 daily adventures programme. The most popular activities are gorge scrambling, rock climbing, high ropes and paddlesports.</p>
-      <a href="#" class="button">View All</a>
-    </div>
-    <div class="one-third column">
-      <h4>Accommodation</h4>
-      <p>Looking for an exciting weekend break or a fun family activity holiday or just a campsite? We have a range of sites that cater for individuals, families and larger groups.</p>
-      <a href="#" class="button">View All</a>
-    </div>
-    <div class="one-third column">
-      <h4>Special Offers</h4>
-      <p>We are now booking for 2019/20 school activity residentials, activity days and group events. Special offers with reduced prices on our winter.</p>
-      <a href="#" class="button">Call Today</a>
-    </div>
+    <article class="blue one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h4>About Us</h4>
+        <p>Now booking for our 2019 daily adventures programme. The most popular activities are gorge scrambling, rock climbing, high ropes and paddlesports.</p>
+        <a href="#" class="button">View All</a>
+      </div>
+    </article>
+    <article class="red one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h4>Accommodation</h4>
+        <p>Looking for an exciting weekend break or a fun family activity holiday or just a campsite? We have a range of sites that cater for individuals, families and larger groups.</p>
+        <a href="#" class="button">View All</a>
+      </div>
+    </article>
+    <article class="green one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h4>Special Offers</h4>
+        <p>We are now booking for 2019/20 school activity residentials, activity days and group events. Special offers with reduced prices on our winter.</p>
+        <a href="#" class="button">Call Today</a>
+      </div>
+    </article>
   </div>
 </section>
 <section class="social">
   <div class="container">
     <h3>Get Social</h3>
+    <div class="six columns">
+      Instagram Photos
+    </div>
+    <div class="six columns">
+      Facebook Feed
+    </div>
   </div>
 </section>
 <section class="newsletter">
@@ -29,7 +44,7 @@
   </div>
 </section>
 
-<footer class="social-links">
+<footer class="links">
   <div class="container">
     <div class="one-third column">
       About Us

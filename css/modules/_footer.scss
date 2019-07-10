@@ -1,6 +1,25 @@
 // Footer
 .quick-links {
   padding: $padding 0;
+  article {
+    &.blue {
+      background: $blue;
+    }
+    &.red {
+      background: $red;
+    }
+    &.green {
+      background: $green;
+    }
+    .content {
+      color: $white;
+      text-align: center;
+      padding: 30px;
+      a.button {
+        display: block;
+      }
+    }
+  }
 }
 .social {
   padding: $padding 0;
@@ -11,13 +30,13 @@
   background: $green;
 }
 footer {
-  &.social-links {
+  &.links {
     padding: $padding 0px;
     color: $white;
     background: $black;
   }
   &.accreditations {
-    background: $buff;
-    padding: $padding 0px;
+    background: $white;
+    padding: $padding-half 0px;
   }
 }

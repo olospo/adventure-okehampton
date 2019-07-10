@@ -16,6 +16,20 @@ if(!empty($thecontent)) { ?>
 </section>
 <?php } ?>
 
+<section class="testimonial">
+  <div class="container">
+    <blockquote>“It was so much fun, I feel like I can climb a mountain!"</blockquote>
+    Thomas, King Edward school, Bath
+  </div>
+</section>
+
+<section class="activities-list">
+  <div class="container">
+    <h2>Activities</h2>
+    <p>We have 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
+  </div>
+</section>
+
 <?php get_template_part( 'inc/components' ); ?>
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>
