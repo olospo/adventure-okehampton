@@ -9,10 +9,10 @@ $background = get_field('background_image');
 $colourScheme = get_field('colour_scheme');
 ?>
 
-<section class="hero <?php echo $colourScheme; ?>" style="background: <?php if($colourScheme == "black"){ ?> url('<?php echo get_template_directory_uri(); ?>/img/header-black.png') center center no-repeat,<?php } if($colourScheme == "blue"){ ?> url('<?php echo get_template_directory_uri(); ?>/img/header-blue.png') center center no-repeat,<?php } ?> url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;"> 
+<section class="hero <?php echo $colourScheme; ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), <?php if($colourScheme == "black"){ ?> url('<?php echo get_template_directory_uri(); ?>/img/header-black.png') center center no-repeat,<?php } if($colourScheme == "blue"){ ?> url('<?php echo get_template_directory_uri(); ?>/img/header-blue.png') center center no-repeat,<?php } ?> url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover; "> 
   <div class="float">
     <div class="container">
-      <div class="content six columns">
+      <div class="content eight columns offset-by-two">
       <h1><?php echo $title; ?></h1>
       <?php if($description) : echo $description; endif; ?>
       

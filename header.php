@@ -19,7 +19,7 @@
     <div class="logo four columns">  
       <?php if ( is_front_page() ) { echo '<h1 class="site-title">'; } else { echo '<p class="site-title">'; } ?>
       <a href="<?php echo get_site_url(); ?>">
-        <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" srcset="<?php bloginfo('template_directory'); ?>/img/logo.png 2x" alt="Logo" class="logo">
+        <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Logo" class="logo">
       </a>
       <?php if ( is_front_page() ) { echo '</h1>'; } else { echo '</p>'; } ?>
     </div>

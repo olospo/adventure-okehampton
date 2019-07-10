@@ -18,8 +18,10 @@ if(!empty($thecontent)) { ?>
 
 <section class="testimonial">
   <div class="container">
-    <blockquote>“It was so much fun, I feel like I can climb a mountain!"</blockquote>
-    Thomas, King Edward school, Bath
+    <blockquote>
+      <p>"It was so much fun, I feel like I can climb a mountain!"</p>
+      <footer>Thomas, King Edward school, Bath</footer>
+    </blockquote>
   </div>
 </section>
 
@@ -30,6 +32,5 @@ if(!empty($thecontent)) { ?>
   </div>
 </section>
 
-<?php get_template_part( 'inc/components' ); ?>
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

@@ -1,19 +1,34 @@
-// Fonts
+// Fonts 
+
 @font-face {
-  font-family: 'F37Jagger-Bold';
-  src: url('../fonts/F37Jagger-Bold.otf');
-  font-style: normal;
+    font-family: 'Headline One';
+    src: url('../fonts/HeadlineOneHPLHS.eot');
+    src: url('../fonts/HeadlineOneHPLHS.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/HeadlineOneHPLHS.woff2') format('woff2'),
+        url('../fonts/HeadlineOneHPLHS.woff') format('woff'),
+        url('../fonts/HeadlineOneHPLHS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'F37Jagger-Regular';
-  src: url('../fonts/F37Jagger-Regular.otf');
-  font-style: normal;
+    font-family: 'Stag';
+    src: url('../fonts/Stag-Light.eot');
+    src: url('../fonts/Stag-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Stag-Light.woff2') format('woff2'),
+        url('../fonts/Stag-Light.woff') format('woff'),
+        url('../fonts/Stag-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
- 
-@font-face {
-  font-family: 'ParaSupreme-BlackNormal';
-  src: url('../fonts/ParaSupreme-BlackNormal.otf');
 
-  font-style: normal;
+@font-face {
+    font-family: 'Stag';
+    src: url('../fonts/Stag-Semibold.eot');
+    src: url('../fonts/Stag-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Stag-Semibold.woff2') format('woff2'),
+        url('../fonts/Stag-Semibold.woff') format('woff'),
+        url('../fonts/Stag-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
 }

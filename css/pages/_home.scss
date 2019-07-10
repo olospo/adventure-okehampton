@@ -1,6 +1,22 @@
 // Home
 
 .testimonial {
+  text-align: center;
   background: $green;
   padding: $padding 0;
+  blockquote {
+    border: none;
+    font: $normal 5.2rem/5.6rem $headline;
+    footer {
+      font: $normal 2.4rem/3.2rem $regular;
+    }
+  }
+}
+
+.activities-list {
+  padding: $padding 0;
+  color: $red;
+  h2 {
+    color: $red;
+  }
 }

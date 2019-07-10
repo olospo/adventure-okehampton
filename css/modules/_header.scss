@@ -3,7 +3,18 @@
 header {
   background: $red;
   .site-title {
-    margin: 25px 0px;
+    margin: 10px 0px;
+  }
+  .logo {
+    height: 80px;
+    width: 120px;
+    svg path {
+      fill: $white !important;
+      transition : fill 200ms ease-out;
+      -webkit-transition :fill 200ms ease-out;
+      -moz-transition : fill 200ms ease-out;
+      -o-transition :  fill opacity 200ms ease-out;
+    }
   }
   nav.primary {
     display: none;

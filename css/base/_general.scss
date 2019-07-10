@@ -1,9 +1,11 @@
 // Avenir
-$regular: Helvetica, Arial, sans-serif;
-$bold: Helvetica, Arial, sans-serif;
+$regular: 'Stag', Helvetica, Arial, sans-serif;
+
+$headline: 'Headline One', Oswald, Helvetica, Arial, sans-serif;
 
 // Weights
-$normal: normal;
+$normal: 300;
+$bold: 600;
 
 // Colours
 $white: #fff;
@@ -69,6 +71,14 @@ body {
   background: $buff;
 }
 
+h1, h2, h3 {
+  font-family: $headline;
+}
+
+h4 {
+  font-family: 'Stag';
+}
+
 // Page 
 section {
   &.page, &.post {
@@ -92,24 +102,24 @@ section {
       }
     }
   }
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3 {
     color: $white;
-    font-family: $bold;
+    font-family: $headline;
   }
   h1 {
-    font: $normal 3.6rem/5rem $regular;
+    font: $normal 3.6rem/5rem $headline;
     margin-bottom: 20px;
     font-size: 3.6rem;
   }
   h2 {
-    font: $normal 3.6rem/5rem $regular;
+    font: $normal 3.6rem/5rem $headline;
     margin-bottom: 10px;
     font-size: 3.6rem;
     line-height: 5rem;
     
   }
   h3 {
-    font: $normal 2rem/2.6rem $bold;
+    font: $normal 2rem/2.6rem $headline;
     margin-bottom: 10px;
     font-size: 2rem;
   }

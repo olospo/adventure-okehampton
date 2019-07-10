@@ -1,18 +1,22 @@
 // Hero
+.overlay {
+  background: #000;
+}
 section.hero{
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-  padding: 200px 0px $padding;
+  padding: 200px 0px;
   .content {
     h1 {
-      font: $normal 5.6rem/7rem $regular;
-      font-size: 5.6rem;
+      text-align: center;
+      font: $normal 7.0rem/7rem $headline;
+      font-size: 7.0rem;
       line-height: 7rem;
       color: $white;
       @media (max-width: $breakpoint-tablet) {
-        font: $normal 4.2rem/5.2rem $regular;
+        font: $normal 4.2rem/5.2rem $headline;
       }
     }
     p {
