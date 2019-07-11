@@ -1,25 +1,9 @@
 {
-    "key": "group_5c619f9af36e7",
+    "key": "group_5d275694c2f12",
     "title": "Hero",
     "fields": [
         {
-            "key": "field_5c66bfa371e68",
-            "label": "Content",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5c619fad80224",
+            "key": "field_5d27569e7a94c",
             "label": "Title",
             "name": "title",
             "type": "text",
@@ -38,46 +22,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5c619fb380225",
-            "label": "Short Description",
-            "name": "short_description",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_5c66bfab71e69",
+            "key": "field_5d2756a47a94d",
             "label": "Image \/ Video",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5d235b4c33825",
-            "label": "Background Type",
-            "name": "background_type",
+            "name": "image_video",
             "type": "select",
-            "instructions": "Select the type of background to display. Image or Video.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -98,20 +47,28 @@
             "placeholder": ""
         },
         {
-            "key": "field_5c619fd480228",
+            "key": "field_5d2757887a94e",
             "label": "Background Image",
             "name": "background_image",
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d2756a47a94d",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "featured-img",
+            "preview_size": "background-img",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -122,13 +79,21 @@
             "mime_types": ""
         },
         {
-            "key": "field_5d235b2133824",
-            "label": "Background Video",
-            "name": "background_video",
+            "key": "field_5d2757a8dbe7d",
+            "label": "Video",
+            "name": "video",
             "type": "oembed",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d2756a47a94d",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -145,9 +110,16 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "activities"
+            }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -155,5 +127,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1562598328
+    "modified": 1562861438
 }
