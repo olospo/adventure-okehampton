@@ -4,19 +4,22 @@
   article {
     &.blue {
       background: $blue;
-      a.button {
+      .button {
+        background: $white;
         color: $blue;
       }
     }
     &.red {
       background: $red;
-      a.button {
+      .button {
+        background: $white;
         color: $red;
       }
     }
     &.green {
       background: $green;
-      a.button {
+      .button {
+        background: $white;
         color: $green;
       }
     }

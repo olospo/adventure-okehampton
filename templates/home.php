@@ -40,17 +40,47 @@ $colourScheme = get_field('colour_scheme');
   </div>
 </section>
 
-<?php
-$thecontent = get_the_content();
-if(!empty($thecontent)) { ?>
-<section class="page">
+<section class="featured">
   <div class="container">
-    <div class="content twelve">
-      <?php the_content(); ?>
-    </div>
+    <article class="blue one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      </div>
+    </article>
+    <article class="red one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      </div>
+    </article>
+    <article class="green one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      </div>
+    </article>
+    <article class="red one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      </div>
+    </article>
+    <article class="green one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      </div>
+    </article>
+    <article class="blue one-third column">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="content">
+        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      </div>
+    </article>
+    
   </div>
 </section>
-<?php } ?>
 
 <section class="testimonial">
   <div class="container">
@@ -66,6 +96,7 @@ if(!empty($thecontent)) { ?>
     <div class="six columns eight columns offset-by-two">
     <h2>Activities</h2>
     <p>We have 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
+    <a href="<?php echo get_site_url(); ?>/activities" class="button">View All</a>
     </div>
   </div>
 </section>

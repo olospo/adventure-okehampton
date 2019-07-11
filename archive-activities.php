@@ -11,6 +11,12 @@ get_header(); ?>
       </div>
       <div class="main_content">
         <div class="twelve columns">
+          <?php 
+            query_posts(array( 
+              'post_type' => 'activities',
+              'showposts' => -1 
+            ));  
+          ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <article class="red one-third column">
             <img src="https://via.placeholder.com/400x200" />
