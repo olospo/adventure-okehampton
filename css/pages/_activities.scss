@@ -30,18 +30,6 @@
 
 // Activity Single
 
-aside.all-activities {
-  background: $green;
-  color: $white;
-  .content {
-    padding: 40px;
-    h3 {
-      color: $white;
-      font: $normal 4.6rem/5rem $headline;
-    }
-  }
-}
-
 .activity.hero {
   text-align: center;
   .button {
@@ -49,15 +37,99 @@ aside.all-activities {
   }
 }
 
+aside.all-activities {
+  background: $green;
+  color: $white;
+  .content {
+    h3 {
+      padding: 30px 30px 0 30px;
+      color: $white;
+      font: $normal 4.6rem/5rem $headline;
+    }
+    ul {
+      margin: 20px 0;
+      li {
+        margin: 0;
+        list-style: none;
+        a {
+          display: block;
+          padding: 10px 0;
+          margin: 0 30px;
+          border-bottom: 1px solid $white;
+        }
+        
+        &.current, &:hover {
+          background: $red;
+          a {
+            margin: 0 30px;
+            padding: 10px 0px;
+            border-bottom: 1px solid transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
 .glance {
+  margin-bottom: $padding-half;
   background: $white;
   color: $red;
   .content {
     padding: 40px;
-    h3 {
+    h2 {
       color: $red;
       font: $normal 4.6rem/5rem $headline;
     }
   }
   
+}
+
+.lead {
+  margin-bottom: $padding-half;
+  p {
+    &:first-child {
+      font: $normal 3.6rem/4.4rem $regular;
+    }
+    font: $normal 2.4rem/3.4rem $regular;
+  }
+}
+
+.tab {
+  .tabheader {
+    h3 {
+      color: $red;
+      font: $normal 3.6rem/4.4rem $headline;
+    }
+  }
+  .tabcontent {
+    display: none;
+  }
+}
+.bookings {
+  margin: $padding-half 0;
+  .individual-booking {
+    background: $white;
+    color: $red;
+    .content {
+      padding: 40px;
+      text-align: center;
+      h3 {
+        color: $red;
+        font: $normal 3.6rem/4.4rem $headline;
+      }
+    }
+  }
+  .group-booking {
+    background: $red;
+    color: $white;
+    .content {
+      padding: 40px;
+      text-align: center;
+      h3 {
+        color: $white;
+        font: $normal 3.6rem/4.4rem $headline;
+      }
+    }
+  }
 }

@@ -2,7 +2,7 @@
 <section class="quick-links">
   <div class="container">
     <article class="blue one-third column">
-      <img src="https://via.placeholder.com/400x200" />
+      <img src="https://via.placeholder.com/600x300" />
       <div class="content">
         <h3>About Us</h3>
         <p>Now booking for our 2019 daily adventures programme. The most popular activities are gorge scrambling, rock climbing, high ropes and paddlesports.</p>
@@ -10,7 +10,7 @@
       </div>
     </article>
     <article class="red one-third column">
-      <img src="https://via.placeholder.com/400x200" />
+      <img src="https://via.placeholder.com/600x300" />
       <div class="content">
         <h3>Accommodation</h3>
         <p>Looking for an exciting weekend break or a fun family activity holiday or just a campsite? We have a range of sites that cater for individuals, families and larger groups.</p>
@@ -18,7 +18,7 @@
       </div>
     </article>
     <article class="green one-third column">
-      <img src="https://via.placeholder.com/400x200" />
+      <img src="https://via.placeholder.com/600x300" />
       <div class="content">
         <h3>Special Offers</h3>
         <p>We are now booking for 2019/20 school activity residentials, activity days and group events. Special offers with reduced prices on our winter.</p>

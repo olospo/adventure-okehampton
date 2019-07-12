@@ -14,14 +14,16 @@ get_header(); ?>
           <?php 
             query_posts(array( 
               'post_type' => 'activities',
-              'showposts' => -1 
+              'showposts' => -1,
+              'orderby'   => 'title',
+              'order'     => 'ASC',
             ));  
           ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <article class="red one-third column">
-            <img src="https://via.placeholder.com/400x200" />
+            <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url( 'background-img' ); ?>" />
             <div class="content">
-              <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+              <h3><?php the_title(); ?></h3></a>
             </div>
           </article>
         <?php endwhile; ?>
