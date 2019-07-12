@@ -1,19 +1,13 @@
 <?php /* Template Name: Home */
 get_header();
+
+// Vars
+$title = get_field('title');
+$background = get_field('background_image');
+
 while ( have_posts() ) : the_post(); ?>
 
-<?php /* Hero Section */
-$title = get_field('title');
-$description = get_field('short_description');
-$buttonText = get_field('button_text');
-$linkType = get_field('button_link');
-$internalLink = get_field('button_link_internal');
-$externalLink = get_field('button_link_external');
-$background = get_field('background_image');
-$colourScheme = get_field('colour_scheme');
-?>
-
-<section class="hero <?php echo $colourScheme; ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), <?php if($colourScheme == "black"){ ?> url('<?php echo get_template_directory_uri(); ?>/img/header-black.png') center center no-repeat,<?php } if($colourScheme == "blue"){ ?> url('<?php echo get_template_directory_uri(); ?>/img/header-blue.png') center center no-repeat,<?php } ?> url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover; "> 
+<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;"> 
   <div class="float">
     <div class="container">
       <div class="content eight columns offset-by-two">

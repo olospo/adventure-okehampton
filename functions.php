@@ -334,7 +334,7 @@ function custom_post_type() {
 		'label'               => __( 'Activity', 'text_domain' ),
 		'description'         => __( 'Activities', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom fields' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -347,12 +347,27 @@ function custom_post_type() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
+		'capability_type'     => 'post',
 	);
-	register_post_type( 'Activities', $args );
+	register_post_type( 'activities', $args );
 }
 
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_type', 0 );
+
+// CPT Menu Item
+
+add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2);
+function current_type_nav_class($classes, $item) {
+    // Get post_type for this post
+    $post_type = get_query_var('post_type');
+
+    // Go to Menus and add a menu class named: {custom-post-type}-menu-item
+    // This adds a 'current_page_parent' class to the parent menu item
+    if( in_array( $post_type.'-menu-item', $classes ) )
+        array_push($classes, 'current_page_parent');
+
+    return $classes;
+}
 
 ?>

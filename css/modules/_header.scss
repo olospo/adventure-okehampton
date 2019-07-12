@@ -3,11 +3,9 @@
 header {
   background: $red;
   .site-title {
-    margin: 10px 0px;
+    margin: 20px 0px;
   }
   .logo {
-    height: 80px;
-    width: 120px;
     svg path {
       fill: $white !important;
       transition : fill 200ms ease-out;
@@ -18,16 +16,17 @@ header {
   }
   nav.primary {
     display: none;
-    font: $normal 1.2rem/1.4rem $bold;
+    font: $normal 2.8rem/3rem $headline;
     text-transform: uppercase;
     ul {
-      text-align: right;
-      margin: 10px 0px;
+      text-align: left;
+      margin: 45px 0px;
       li {
         display: inline-block;
-        &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-category-ancestor a, a:hover {
+        &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-category-ancestor a, &.current_page_parent a, a:hover {
           color: $white;
-          padding: 20px 5px;
+          border-bottom: 5px solid $white;
+          padding: 15px 5px;
         }
         a {
           @include transition(all 0.2s ease-out);
@@ -35,8 +34,8 @@ header {
           display: inline-block;
           color: $white;
           text-decoration: none;
-          margin: 0px 5px;
-          padding: 20px 5px;
+          margin: 0px 20px;
+          padding: 15px 5px;
         }
       }
     }

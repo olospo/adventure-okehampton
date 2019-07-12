@@ -1,4 +1,4 @@
-// Home
+// Activities Listing
 
 .archive_listing {
   padding: $padding-half 0 0 0;
@@ -26,4 +26,38 @@
       margin-left: 0;
     }
   }
+}
+
+// Activity Single
+
+aside.all-activities {
+  background: $green;
+  color: $white;
+  .content {
+    padding: 40px;
+    h3 {
+      color: $white;
+      font: $normal 4.6rem/5rem $headline;
+    }
+  }
+}
+
+.activity.hero {
+  text-align: center;
+  .button {
+    margin: 10px;
+  }
+}
+
+.glance {
+  background: $white;
+  color: $red;
+  .content {
+    padding: 40px;
+    h3 {
+      color: $red;
+      font: $normal 4.6rem/5rem $headline;
+    }
+  }
+  
 }

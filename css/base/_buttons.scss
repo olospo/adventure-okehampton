@@ -14,4 +14,8 @@
     // color: $white;
     border: none;
   }
+  &.white {
+    background: $white;
+    color: $red;
+  }
 }
