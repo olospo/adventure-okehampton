@@ -3,6 +3,7 @@
 .archive_listing {
   padding: $padding-half 0 0 0;
   article {
+    background: $red;
     text-align: center;
     margin-bottom: $padding-half;
     h3 {
@@ -13,14 +14,14 @@
         border-bottom: none;
       }
     }
-    &.blue {
+    &:nth-child(6n+6) {
       background: $blue;
     }
-    &.red {
-      background: $red;
-    }
-    &.green {
+    &:nth-child(2n+3) {
       background: $green;
+    }
+    &:nth-child(6n+1) {
+      background: $blue;
     }
     &:nth-child(3n+4) {
       margin-left: 0;

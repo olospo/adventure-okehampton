@@ -7,6 +7,9 @@ $background = get_field('background_image');
 $glance = get_field('at_a_glance'); 
 $content = get_field('content');
 
+$individual = get_field('individual_bookings');
+$group = get_field('group_bookings');
+
 ?>
 
 <section class="activity hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;">
@@ -58,30 +61,47 @@ $content = get_field('content');
         <?php echo $content; ?>
       </div>
       <!-- Tabs -->
-      <div class="tab">
-        
-        <div class="tabheader">
-          <h3>Lorem ipsum dolar sit</h3>
+      <?php if( have_rows('tab') ): ?>
+        <div class="tab">
+          <?php while( have_rows('tab') ): the_row(); 
+
+      		// vars
+      		$tabHeader = get_sub_field('tab_header');
+      		$tabContent = get_sub_field('tab_content');
+      
+      		?>
+      		<div class="tabheader">
+            <h3><?php echo $tabHeader; ?></h3>
+          </div>
+          <div class="tabcontent">
+            <?php // check if the flexible content field has rows of data
+            if( have_rows('tab_content') ):
+              while ( have_rows('tab_content') ) : the_row();
+            
+                if( get_row_layout() == 'content' ):
+            
+                  the_sub_field('content');
+            
+                  elseif( get_row_layout() == 'slider' ): 
+            
+                  the_sub_field('slider');
+            
+                  endif;
+            
+              endwhile;
+          
+            else :
+              // no layouts found
+            endif; ?>
+          </div>
+
+      	  <?php endwhile; ?>
         </div>
-        <div class="tabcontent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        
-        <div class="tabheader">
-          <h3>Lorem ipsum dolar sit</h3>
-        </div>
-        <div class="tabcontent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        
-        <div class="tabheader">
-          <h3>Lorem ipsum dolar sit</h3>
-        </div>
-        <div class="tabcontent">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+        <?php endif; ?>
+           
         <!-- Bookings -->
         <div class="bookings row">
+          <?php if ($individual) { ?>
           <div class="individual-booking six columns">
             <div class="content">
               <h3>For Individual Bookings</h3>
@@ -89,6 +109,8 @@ $content = get_field('content');
               <a href="#" class="button">Book Now</a>
             </div>
           </div>
+          <?php } ?>
+          <?php if ($group) { ?>
           <div class="group-booking six columns">
             <div class="content">
               <h3>For Group Bookings</h3>
@@ -96,11 +118,39 @@ $content = get_field('content');
               <a href="#" class="button white">Group Enquiry</a>
             </div>
           </div>
+          <?php } ?>
         </div>
         <!-- Related Info/Documents -->
+        <?php if( have_rows('related_info_documents') ): ?>
         <div class="related">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <h3>Related Info/Documents</h3>
+          <ul>
+          <?php while( have_rows('related_info_documents') ): the_row(); 
+
+      		// vars
+      		$title = get_sub_field('title');
+      		$url = get_sub_field('url');
+      		$upload = get_sub_field('upload');
+      
+      		?>
+      		<li>
+          <?php if( $url ): ?>
+            <a href="<?php echo $url; ?>" target="_blank">
+          <?php endif; ?>
+          
+          <?php if( $upload ): ?>
+            <a href="<?php echo $upload; ?>">
+          <?php endif; ?>
+          
+          <?php echo $title; ?>
+
+				  </a>
+          </li>
+
+      	  <?php endwhile; ?>
+      	  </ul>
         </div>
+        <?php endif; ?> 
       </div>
     </div>
   </div>

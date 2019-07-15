@@ -20,7 +20,7 @@ get_header(); ?>
             ));  
           ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <article class="red one-third column">
+          <article class="one-third column">
             <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url( 'background-img' ); ?>" />
             <div class="content">
               <h3><?php the_title(); ?></h3></a>
