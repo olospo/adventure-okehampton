@@ -5,6 +5,9 @@ get_header();
 $title = get_field('title');
 $background = get_field('background_image');
 
+// Quick Links
+
+
 while ( have_posts() ) : the_post(); ?>
 
 <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;"> 
@@ -34,47 +37,50 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
-<section class="featured">
+<?php if( have_rows('quick_links') ): ?>
+
+<section class="quick_links">
   <div class="container">
-    <article class="blue one-third column">
-      <img src="https://via.placeholder.com/400x200" />
+
+	<?php while( have_rows('quick_links') ): the_row(); ?>
+
+    <?php $post_object = get_sub_field('link'); if( $post_object ): 
+    	// override $post
+    	$post = $post_object;
+    	setup_postdata( $post ); 
+    ?>
+
+		<article class="one-third column">
+      <div class="image">
+        <a href="<?php the_permalink(); ?>">
+        <?php if( have_rows('overlay') ): ?>
+        <div class="overlay">
+          <ul>
+          <?php while( have_rows('overlay') ): the_row(); 
+
+        		// vars
+        		$overlayText = get_sub_field('overlay_text');
+        		
+          ?>
+          <li><?php echo $overlayText; ?></li>
+          <?php endwhile; ?>
+            </ul>
+          </div>
+          <?php endif; ?> 
+        <img src="<?php the_post_thumbnail_url( 'background-img' ); ?>" />
+      </div>
       <div class="content">
-        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
+      <h3><?php the_title(); ?></h3></a>
       </div>
     </article>
-    <article class="red one-third column">
-      <img src="https://via.placeholder.com/400x200" />
-      <div class="content">
-        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
-      </div>
-    </article>
-    <article class="green one-third column">
-      <img src="https://via.placeholder.com/400x200" />
-      <div class="content">
-        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
-      </div>
-    </article>
-    <article class="red one-third column">
-      <img src="https://via.placeholder.com/400x200" />
-      <div class="content">
-        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
-      </div>
-    </article>
-    <article class="green one-third column">
-      <img src="https://via.placeholder.com/400x200" />
-      <div class="content">
-        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
-      </div>
-    </article>
-    <article class="blue one-third column">
-      <img src="https://via.placeholder.com/400x200" />
-      <div class="content">
-        <h3><a href="<?php the_permalink(); ?>">Text</a></h3>
-      </div>
-    </article>
-    
-  </div>
+    <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+	<?php endwhile; ?>
+
+	</div>
 </section>
+
+<?php endif; ?>
 
 <section class="testimonial">
   <div class="container">

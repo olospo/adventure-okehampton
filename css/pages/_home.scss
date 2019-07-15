@@ -28,34 +28,6 @@ form {
   }
 }
 
-.featured {
-  padding: $padding-half 0 0 0;
-  article {
-    text-align: center;
-    margin-bottom: $padding-half;
-    h3 {
-      margin: 0;
-      padding: 20px;
-      font: $normal 2.8rem/3.4rem $headline;
-      a {
-        border-bottom: none;
-      }
-    }
-    &.blue {
-      background: $blue;
-    }
-    &.red {
-      background: $red;
-    }
-    &.green {
-      background: $green;
-    }
-    &:nth-child(3n+4) {
-      margin-left: 0;
-    }
-  }
-}
-
 .testimonial {
   text-align: center;
   background: $green;
