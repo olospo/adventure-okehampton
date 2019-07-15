@@ -117,6 +117,13 @@
                 "operator": "==",
                 "value": "activities"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "groups"
+            }
         ]
     ],
     "menu_order": 0,
@@ -127,5 +134,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1562861438
+    "modified": 1563199372
 }

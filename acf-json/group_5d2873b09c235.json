@@ -475,6 +475,62 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_5d2c6dcb2f2e9",
+            "label": "Overlay Information",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5d2c6ecc2f2ea",
+            "label": "Overlay",
+            "name": "overlay",
+            "type": "repeater",
+            "instructions": "Add Text to display on the overlay when a user hovers on the image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 3,
+            "layout": "block",
+            "button_label": "Add Overlay Text",
+            "sub_fields": [
+                {
+                    "key": "field_5d2c6edc2f2eb",
+                    "label": "Overlay Text",
+                    "name": "overlay_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -483,6 +539,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "activities"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "groups"
             }
         ]
     ],
@@ -503,5 +566,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563183600
+    "modified": 1563199385
 }
