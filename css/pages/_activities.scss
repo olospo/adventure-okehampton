@@ -1,12 +1,14 @@
 // Activities Listing
 
-.archive_listing {
+.archive_listing, .quick_links {
   padding: $padding-half 0 0 0;
   article {
+    
     background: $red;
     text-align: center;
     margin-bottom: $padding-half;
     h3 {
+      z-index: 2;
       margin: 0;
       padding: 20px;
       font: $normal 2.8rem/3.4rem $headline;
@@ -25,6 +27,49 @@
     }
     &:nth-child(3n+4) {
       margin-left: 0;
+    }
+    .image {
+      position: relative;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .overlay {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.7s ease;
+      background-color: rgba(9, 0, 24, 0.50);
+      ul {
+        width: 100%;
+        color: white;
+        font: $normal 1.6rem/3rem $regular;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        li {
+          margin: 0px 40px;
+          padding: 8px 0px;
+          list-style: none;
+          border-bottom: 1px solid $white;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    &:hover .overlay {
+      opacity: 1;
     }
   }
 }
@@ -98,6 +143,8 @@ aside.all-activities {
 
 .tab {
   .tabheader {
+    border-bottom: 2px solid $red;
+    margin-bottom: 10px;
     h3 {
       color: $red;
       font: $normal 3.6rem/4.4rem $headline;
@@ -131,6 +178,31 @@ aside.all-activities {
         color: $white;
         font: $normal 3.6rem/4.4rem $headline;
       }
+    }
+  }
+}
+
+.related {
+  padding: $padding-half 0 0 0;
+  h3 {
+    color: $red;
+    font: $normal 3.6rem/4.4rem $headline;
+  }
+  ul {
+    color: $red;
+    li {
+      margin: 0;
+      padding: 10px 0px;
+      list-style: none;
+      border-bottom: 1px solid #e0d1c8;
+      &:first-child {
+        border-top: 1px solid #e0d1c8;
+      }
+      a {
+        color: $red;
+        border-bottom: 1px solid $red;
+      }
+      
     }
   }
 }

@@ -17,11 +17,12 @@ $group = get_field('group_bookings');
     <div class="container">
       <div class="content six columns offset-by-three">
         <h1><?php the_title(); ?></h1>
-        <a href="#" class="button white">Individual Booking</a> <a href="#" class="button">Group Enquiry</a>
+        <?php if ($individual) { ?><a href="#" class="button white">Individual Booking</a><?php } if ($group) { ?><a href="#" class="button">Group Enquiry</a><?php } ?>
       </div>
     </div>
   </div>
 </section>
+
 <section class="post">
   <div class="container">
     <aside class="all-activities four columns">
@@ -72,7 +73,6 @@ $group = get_field('group_bookings');
       		?>
       		<div class="tabheader">
             <h3><?php echo $tabHeader; ?></h3>
-          </div>
           <div class="tabcontent">
             <?php // check if the flexible content field has rows of data
             if( have_rows('tab_content') ):
@@ -94,7 +94,8 @@ $group = get_field('group_bookings');
               // no layouts found
             endif; ?>
           </div>
-
+          
+          </div>
       	  <?php endwhile; ?>
         </div>
         <?php endif; ?>
