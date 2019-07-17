@@ -16,7 +16,7 @@
 <body <?php body_class($color); ?>>
 <header class="fixed_header">
   <div class="container"> 
-    <div class="logo four columns">  
+    <div class="logo three columns">  
       <?php if ( is_front_page() ) { echo '<h1 class="site-title">'; } else { echo '<p class="site-title">'; } ?>
       <a href="<?php echo get_site_url(); ?>">
         <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Logo" class="logo">
@@ -26,7 +26,7 @@
     <!-- Mobile Menu Trigger -->
     <div class="mobile_menu"></div>
     <!-- Main Menu -->
-    <nav class="primary eight columns">
+    <nav class="primary nine columns">
       <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
     </nav>
   </div>

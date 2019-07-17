@@ -6,6 +6,7 @@ header {
     margin: 20px 0px;
   }
   .logo {
+    height: 70px;
     svg path {
       fill: $white !important;
       transition : fill 200ms ease-out;
@@ -16,7 +17,7 @@ header {
   }
   nav.primary {
     display: none;
-    font: $normal 2.6rem/3rem $headline;
+    font: $normal 2.4rem/3rem $headline;
     text-transform: uppercase;
     ul {
       line-height:1em;
@@ -28,9 +29,12 @@ header {
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $white;
           border-bottom: 5px solid $white;
-          margin: 45px 15px;
+          margin: 28px 15px;
           padding: 15px 5px;
-          
+        }
+        &.menu-item-has-children a {
+          background: url('../img/dropdown_icon.svg') center right no-repeat;
+          padding: 15px 30px 15px 5px;
         }
         a {
           @include transition(all 0.2s ease-out);
@@ -38,9 +42,10 @@ header {
           display: block;
           color: $white;
           text-decoration: none;
-          margin: 45px 15px;
+          margin: 28px 15px;
           padding: 15px 5px;
           border-bottom: 5px solid transparent;
+          
         }
         &.button {
           
@@ -108,6 +113,7 @@ nav.mobile {
         color: $black;
         padding: 15px 0px;
         border-bottom: 1px solid $black;
+        
       }
       a {
         @include transition(all 0.2s ease-out);
@@ -126,7 +132,7 @@ nav.mobile {
 nav.primary ul ul {
   display: none; 
   position: absolute;
-  top: 151px;
+  top: 117px;
   z-index: 9999;
   background: $white;
   margin: 0;
