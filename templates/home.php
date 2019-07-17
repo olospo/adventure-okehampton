@@ -3,15 +3,68 @@ get_header();
 
 // Vars
 $title = get_field('title');
-$background = get_field('background_image');
-
-// Quick Links
-
+$heroType = get_field('image_video');
+$image = get_field('background_image');
+$video = get_field('video');
 
 while ( have_posts() ) : the_post(); ?>
 
-<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;"> 
-  <div class="float">
+<section class="hero" <?php if( $heroType == 'image' ): ?> style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;"<?php endif; ?>>
+  <?php if( $heroType == 'video' ): ?>
+  <style>
+  .video-area {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .video-area iframe {
+    width: 100vw;
+    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+  <div class="video-area">
+    <?php
+    // get iframe HTML
+    $iframe = get_field('video');
+    
+    // use preg_match to find iframe src
+    preg_match('/src="(.+?)"/', $iframe, $matches);
+    $src = $matches[1];
+    
+    // add extra params to iframe src
+    $params = array(
+      'controls'    => 0,
+      'hd'          => 1,
+      'autohide'    => 1,
+      'autoplay'    => 1,
+      'showinfo'    => 0,
+      'loop'        => 1
+    );
+    
+    $new_src = add_query_arg($params, $src);
+    $iframe = str_replace($src, $new_src, $iframe);
+    
+    
+    // add extra attributes to iframe html
+    $attributes = 'frameborder="0"';
+    $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+    
+    // echo $iframe
+    echo $iframe; ?>
+
+  </div>
+  <?php endif; ?>
+  <div class="float <?php if($video) : ?>video<?php endif; ?>">
     <div class="container">
       <div class="content eight columns offset-by-two">
       <h1><?php echo $title; ?></h1>
@@ -84,10 +137,31 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="testimonial">
   <div class="container">
-    <blockquote class="eight columns offset-by-two">
-      <p>"It was so much fun, I feel like I can climb a mountain!"</p>
-      <footer>Thomas, King Edward school, Bath</footer>
-    </blockquote>
+    <?php if( have_rows('testimonials') ): ?>
+
+    	<div class="testimonials eight columns offset-by-two">
+    
+    	<?php while( have_rows('testimonials') ): the_row(); 
+    
+    		// vars
+    		$quote = get_sub_field('quote');
+    		$attribution = get_sub_field('quote_attribution');
+    
+    		?>
+    
+    		<blockquote>
+    
+    			<p><?php echo $quote; ?></p>
+          <footer><?php echo $attribution; ?></footer>
+    
+    		</blockquote>
+    
+    	<?php endwhile; ?>
+    
+    	</div>
+    
+    <?php endif; ?>
+    </div>
   </div>
 </section>
 
