@@ -17,14 +17,38 @@ $group = get_field('group_bookings');
     <div class="container">
       <div class="content six columns offset-by-three">
         <h1><?php the_title(); ?></h1>
-        <?php if ($individual) { ?><a href="#" class="button white">Individual Booking</a><?php } if ($group) { ?><a href="#" class="button">Group Enquiry</a><?php } ?>
+        <?php if ($individual) { ?><script bt='Individual Booking' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script><?php } if ($group) { ?><a href="#" class="button">Group Enquiry</a><?php } ?>
       </div>
     </div>
   </div>
 </section>
 
 <section class="post">
+  <?php if( have_rows('slider') ): ?>
   <div class="container">
+    <div class="activity-slider twelve columns">
+    <?php while( have_rows('slider') ): the_row(); 
+    
+      // vars
+      $slideImage = get_sub_field('slide_image');
+      
+      // thumbnail
+      $size = 'featured-img';
+      $featured = $slideImage['sizes'][ $size ];
+      $width = $slideImage['sizes'][ $size . '-width' ];
+      $height = $slideImage['sizes'][ $size . '-height' ];
+    
+    ?>
+    <div class="slide">
+      <img src="<?php echo $featured; ?>">
+    </div>
+    <?php endwhile; ?>
+    
+    </div>
+  </div>
+  <?php endif; ?>
+  <div class="container">
+    
     <aside class="all-activities four columns">
       <div class="content">
         <h3>All Activities</h3>
@@ -107,7 +131,7 @@ $group = get_field('group_bookings');
             <div class="content">
               <h3>For Individual Bookings</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="#" class="button">Book Now</a>
+              <script bt='Book Now' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script>
             </div>
           </div>
           <?php } ?>

@@ -30,7 +30,6 @@ $group = get_field('group_bookings');
         <h3>All Activities</h3>
         
         <?php $current_post = $post->ID;        
-
             query_posts(array( 
               'post_type' => 'groups',
               'showposts' => -1,
