@@ -18,4 +18,18 @@
     background: $white;
     color: $red;
   }
+  &.red {
+    background: $red;
+    color: $white;
+  }
 }
+// Booking Hound fixes
+.tngbh-btn {
+  @extend .button;
+  @extend .white;
+}
+.individual-booking > .content > .tngbh-btn {
+  @extend .button;
+  @extend .red;
+}
+

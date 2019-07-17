@@ -74,6 +74,13 @@
   }
 }
 
+.contact_cta {
+  background: $green;
+  color: $white;
+  padding: $padding 0;
+  font: $normal 2.8rem/3.8rem $regular;
+}
+
 // Activity Single
 
 .activity.hero {
@@ -83,35 +90,18 @@
   }
 }
 
-aside.all-activities {
-  background: $green;
-  color: $white;
-  .content {
-    h3 {
-      padding: 30px 30px 0 30px;
-      color: $white;
-      font: $normal 4.6rem/5rem $headline;
-    }
-    ul {
-      margin: 20px 0;
-      li {
-        margin: 0;
-        list-style: none;
-        a {
-          display: block;
-          padding: 10px 0;
-          margin: 0 30px;
-          border-bottom: 1px solid $white;
-        }
-        
-        &.current, &:hover {
-          background: $red;
-          a {
-            margin: 0 30px;
-            padding: 10px 0px;
-            border-bottom: 1px solid transparent;
-          }
-        }
+.activity-slider {
+  margin-bottom: 100px !important;
+  .slick-slide {
+    padding: 0 20px 0 0;
+  }
+  ul.slick-dots {
+    li {
+      background: $red;
+      border: 1px solid $red;
+      &.slick-active, &:hover {
+        background: none;
+        border: 1px solid $red;
       }
     }
   }

@@ -191,6 +191,40 @@ section {
   }
 }
 
+aside {
+  background: $green;
+  color: $white;
+  .content {
+    h3 {
+      padding: 30px 30px 0 30px;
+      color: $white;
+      font: $normal 4.6rem/5rem $headline;
+    }
+    ul {
+      margin: 20px 0;
+      li {
+        margin: 0;
+        list-style: none;
+        a {
+          display: block;
+          padding: 10px 0;
+          margin: 0 30px;
+          border-bottom: 1px solid $white;
+        }
+        
+        &.current, &.current_page_item, &:hover {
+          background: $red;
+          a {
+            margin: 0 30px;
+            padding: 10px 0px;
+            border-bottom: 1px solid transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
 .breadcrumbs {
   padding: 20px 0px;
   width: 100%;

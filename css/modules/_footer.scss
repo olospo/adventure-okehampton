@@ -1,6 +1,10 @@
 // Footer
 .quick-links {
-  padding: $padding 0;
+  .container {
+    padding: $padding 0;
+    margin-top: $padding;
+    border-top: 2px dashed $black;
+  }
   article {
     &.blue {
       background: $blue;

@@ -60,7 +60,7 @@
 }
 
 .slick-slider {
-  margin: 0px -20px;
+  margin: 0px;
 }
 .slick-slide {
   display: none;
@@ -167,7 +167,7 @@ ul {
 
 .slick-dots {
   position: absolute;
-  bottom: 0px;
+  bottom: -40px;
   display: block;
   width: 100%;
   padding: 0;
@@ -178,15 +178,17 @@ ul {
 .slick-dots li {
   position: relative;
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   margin: 0 5px;
   padding: 0;
   cursor: pointer;
-  background: rgb(0, 53, 149);
+  background: $white;
+  border: 1px solid $white;
   border-radius: 50%;
   &.slick-active, &:hover {
-    background: $white;
+    background: none;
+    border: 1px solid $white;
   }
 }
 .slick-dots li button {
