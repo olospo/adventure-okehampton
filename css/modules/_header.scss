@@ -9,10 +9,6 @@ header {
     height: 70px;
     svg path {
       fill: $white !important;
-      transition : fill 200ms ease-out;
-      -webkit-transition :fill 200ms ease-out;
-      -moz-transition : fill 200ms ease-out;
-      -o-transition :  fill opacity 200ms ease-out;
     }
   }
   nav.primary {
@@ -132,7 +128,7 @@ nav.mobile {
 nav.primary ul ul {
   display: none; 
   position: absolute;
-  top: 117px;
+  top: 115px;
   z-index: 9999;
   background: $white;
   margin: 0;

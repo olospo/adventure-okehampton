@@ -130,6 +130,7 @@ $group = get_field('group_bookings');
           <div class="individual-booking six columns">
             <div class="content">
               <h3>For Individual Bookings</h3>
+              <img src="<?php bloginfo('template_directory'); ?>/img/single_icon.svg" />
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <script bt='Book Now' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script>
             </div>
@@ -139,6 +140,7 @@ $group = get_field('group_bookings');
           <div class="group-booking six columns">
             <div class="content">
               <h3>For Group Bookings</h3>
+              <img src="<?php bloginfo('template_directory'); ?>/img/group_icon.svg" />
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="#" class="button white">Group Enquiry</a>
             </div>
@@ -160,11 +162,11 @@ $group = get_field('group_bookings');
       		?>
       		<li>
           <?php if( $url ): ?>
-            <a href="<?php echo $url; ?>" target="_blank">
+            <a href="<?php echo $url; ?>" target="_blank" class="filetype link">
           <?php endif; ?>
           
           <?php if( $upload ): ?>
-            <a href="<?php echo $upload; ?>">
+            <a href="<?php echo $upload; ?>" class="filetype">
           <?php endif; ?>
           
           <?php echo $title; ?>
