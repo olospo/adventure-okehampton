@@ -31,14 +31,14 @@ $padding-quarter: 20px;
 // General
 
 ::selection {
-  color: $black;
-  background: $white !important;
+  color: $white;
+  background: $red !important;
   text-shadow: none !important;
 }
     
 ::-moz-selection {
-  color: $black;
-  background: $white;
+  color: $white;
+  background: $red;
   text-shadow: none !important;
 }
 
