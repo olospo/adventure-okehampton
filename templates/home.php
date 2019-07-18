@@ -167,9 +167,33 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="activities-list">
   <div class="container">
-    <div class="six columns eight columns offset-by-two">
+    <div class="eight columns offset-by-two">
     <h2>Activities</h2>
     <p>We have 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
+    </div>
+    <div class="twelve columns">
+    <?php $current_post = $post->ID;        
+      query_posts(array( 
+              'post_type' => 'activities',
+              'showposts' => -1,
+              'orderby'   => 'rand',
+              'order'     => 'ASC',
+              
+            ));  
+          ?>
+        <div class="activity-scroll">
+        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+          <?php $icon = get_field('activity_icon'); ?>
+          
+          <a href="<?php the_permalink(); ?>">
+            <div class="circle">
+              <img src="<?php echo $icon['url']; ?>">
+            </div>
+            <?php the_title(); ?>
+          </a>
+        <?php endwhile; ?>
+        </div>
+        <?php else : endif; wp_reset_query(); ?>
     <a href="<?php echo get_site_url(); ?>/activities" class="button">View All</a>
     </div>
   </div>

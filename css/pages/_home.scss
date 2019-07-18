@@ -47,10 +47,44 @@ form {
 
 .activities-list {
   text-align: center;
-  padding: $padding 0;
+  padding: $padding 0 0 0;
   color: $red;
   h2 {
     color: $red;
     font: $normal 5.2rem/5.6rem $headline;
+    margin-bottom: 20px;
+  }
+  p {
+    font: $normal 3.0rem/3.8rem $regular;
+  }
+  .activity-scroll {
+    margin: 40px 0px 60px 0px;
+    font: $normal 3.0rem/3.6rem $headline;
+    .circle {
+      margin: 20px auto;
+      height: 180px;
+      width: 180px;
+      background: $white;
+      @include border-radius(50%);
+      svg {
+        max-width: 70%;
+        max-height: 100%;
+        path {
+          fill: $red;
+        }
+      }
+    }
+    a {
+      color: $red;
+      border-bottom: none;
+      &:hover {
+        .circle {
+          background: $red;
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
   }
 }

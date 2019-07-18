@@ -53,6 +53,35 @@ $('.activity-slider').slick({
   ]
 });
 
+$('.activity-scroll').slick({
+  autoplay:true,
+  dots: false,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 700,
+  slidesToShow: 5,
+  slidesToScroll: 5,  
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll:3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
 
 $(function(){
   activate('img[src*=".svg"]');
