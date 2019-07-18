@@ -70,31 +70,31 @@ $group = get_field('group_bookings');
       		$tabContent = get_sub_field('tab_content');
       
       		?>
-      		<div class="tabheader">
-            <h3><?php echo $tabHeader; ?></h3>
-          <div class="tabcontent">
-            <?php // check if the flexible content field has rows of data
-            if( have_rows('tab_content') ):
-              while ( have_rows('tab_content') ) : the_row();
+      		<div class="accordionItem close">
+            <h3 class="accordionItemHeading"><?php echo $tabHeader; ?></h3>
+            <div class="accordionItemContent">
+              <?php // check if the flexible content field has rows of data
+              if( have_rows('tab_content') ):
+                while ( have_rows('tab_content') ) : the_row();
+              
+                  if( get_row_layout() == 'content' ):
+              
+                    the_sub_field('content');
+              
+                    elseif( get_row_layout() == 'slider' ): 
+              
+                    the_sub_field('slider');
+              
+                    endif;
+              
+                endwhile;
             
-                if( get_row_layout() == 'content' ):
-            
-                  the_sub_field('content');
-            
-                  elseif( get_row_layout() == 'slider' ): 
-            
-                  the_sub_field('slider');
-            
-                  endif;
-            
-              endwhile;
-          
-            else :
-              // no layouts found
-            endif; ?>
+              else :
+                // no layouts found
+              endif; ?>
+            </div>
           </div>
-          
-          </div>
+
       	  <?php endwhile; ?>
         </div>
         <?php endif; ?>
