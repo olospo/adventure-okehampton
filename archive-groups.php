@@ -30,31 +30,7 @@ get_header(); ?>
             ));  
           ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <article class="one-third column">
-            <div class="image">
-            <a href="<?php the_permalink(); ?>">
-            <?php if( have_rows('overlay') ): ?>
-            <div class="overlay">
-              <ul>
-            <?php while( have_rows('overlay') ): the_row(); 
-
-        		// vars
-        		$overlayText = get_sub_field('overlay_text');
-      
-        		?>
-  
-            <li><?php echo $overlayText; ?></li>
-        	  <?php endwhile; ?>
-              </ul>
-            </div>
-            <?php endif; ?> 
-
-            <img src="<?php the_post_thumbnail_url( 'background-img' ); ?>" />
-            </div>
-            <div class="content">
-              <h3><?php the_title(); ?></h3></a>
-            </div>
-          </article>
+          <?php get_template_part( 'inc/article' ); ?>
         <?php endwhile; ?>
         
         <?php numeric_posts_nav(); ?>

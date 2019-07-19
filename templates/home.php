@@ -94,39 +94,15 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="quick_links">
   <div class="container">
-
-	<?php while( have_rows('quick_links') ): the_row(); ?>
-
-    <?php $post_object = get_sub_field('link'); if( $post_object ): 
+	<?php while( have_rows('quick_links') ): the_row(); 
+    $post_object = get_sub_field('link'); if( $post_object ): 
     	// override $post
     	$post = $post_object;
     	setup_postdata( $post ); 
-    ?>
-
-		<article class="one-third column">
-      <div class="image">
-        <a href="<?php the_permalink(); ?>">
-        <?php if( have_rows('overlay') ): ?>
-        <div class="overlay">
-          <ul>
-          <?php while( have_rows('overlay') ): the_row(); 
-
-        		// vars
-        		$overlayText = get_sub_field('overlay_text');
-        		
-          ?>
-          <li><?php echo $overlayText; ?></li>
-          <?php endwhile; ?>
-            </ul>
-          </div>
-          <?php endif; ?> 
-        <img src="<?php the_post_thumbnail_url( 'background-img' ); ?>" />
-      </div>
-      <div class="content">
-      <h3><?php the_title(); ?></h3></a>
-      </div>
-    </article>
-    <?php wp_reset_postdata(); ?>
+    
+      get_template_part( 'inc/article' );
+    
+    wp_reset_postdata(); ?>
     <?php endif; ?>
 	<?php endwhile; ?>
 
@@ -138,28 +114,20 @@ while ( have_posts() ) : the_post(); ?>
 <section class="testimonial">
   <div class="container">
     <?php if( have_rows('testimonials') ): ?>
-
     	<div class="testimonials eight columns offset-by-two">
-    
     	<?php while( have_rows('testimonials') ): the_row(); 
-    
     		// vars
     		$quote = get_sub_field('quote');
     		$attribution = get_sub_field('quote_attribution');
-    
     		?>
-    
+    		   
     		<blockquote>
-    
     			<p><?php echo $quote; ?></p>
           <footer><?php echo $attribution; ?></footer>
-    
-    		</blockquote>
-    
+    		</blockquote> 
+    		   
     	<?php endwhile; ?>
-    
     	</div>
-    
     <?php endif; ?>
     </div>
   </div>
@@ -172,15 +140,15 @@ while ( have_posts() ) : the_post(); ?>
     <p>We have 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
     </div>
     <div class="twelve columns">
-    <?php $current_post = $post->ID;        
+      <?php $current_post = $post->ID;        
       query_posts(array( 
-              'post_type' => 'activities',
-              'showposts' => -1,
-              'orderby'   => 'rand',
-              'order'     => 'ASC',
+        'post_type' => 'activities',
+        'showposts' => -1,
+        'orderby'   => 'rand',
+        'order'     => 'ASC',
               
-            ));  
-          ?>
+      ));  
+      ?>
         <div class="activity-scroll">
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <?php $icon = get_field('activity_icon'); ?>
