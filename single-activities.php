@@ -158,21 +158,26 @@ $group = get_field('group_bookings');
       		$title = get_sub_field('title');
       		$url = get_sub_field('url');
       		$upload = get_sub_field('upload');
+      		
+      		$ext = pathinfo($upload, PATHINFO_EXTENSION);
       
       		?>
-      		<li>
-          <?php if( $url ): ?>
-            <a href="<?php echo $url; ?>" target="_blank" class="filetype link">
+      		
+      		<?php if( $url ): ?>
+          <li class="link">
+            <a href="<?php echo $url; ?>" target="_blank">
+              <?php echo $title; ?>
+				    </a>
+          </li>
           <?php endif; ?>
           
           <?php if( $upload ): ?>
-            <a href="<?php echo $upload; ?>" class="filetype">
-          <?php endif; ?>
-          
-          <?php echo $title; ?>
-
-				  </a>
+          <li class="<?php echo $ext; ?>">
+            <a href="<?php echo $upload; ?>">
+              <?php echo $title; ?>
+				    </a>
           </li>
+          <?php endif; ?>
 
       	  <?php endwhile; ?>
       	  </ul>

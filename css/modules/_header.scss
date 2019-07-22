@@ -7,18 +7,28 @@
   z-index: 9999;
 }
 header {
-
   background: $red;
-  .site-title {
-    margin: 20px 0px;
-  }
+  
   .logo {
-    height: 82px;
+    height: 80px;
     @media (min-width: $breakpoint-tablet) {
       height: 70px;
     } 
     svg path {
       fill: $white !important;
+    }
+    .site-title {
+      margin: 10px 0px;
+      @media (min-width: $breakpoint-tablet) {
+        margin: 20px 0px;
+      }
+      line-height: 0;
+      svg {
+        height: 60px;
+        @media (min-width: $breakpoint-tablet) {
+          height: 70px;
+        }
+      }
     }
   }
   nav.primary {
@@ -76,10 +86,10 @@ header {
     } 
   }
   .mobile_menu {
-    background: url('../img/mobile_menu_icon.png') no-repeat center 22px $white;
+    background: url('../img/mobile_menu_icon.png') no-repeat center 30px $white;
     width: 10%;
-    width: 82px;  
-    height: 82px;
+    width: 80px;  
+    height: 80px;
     float: left;
     box-sizing: border-box;
     position: absolute;
@@ -107,7 +117,7 @@ nav.mobile {
   background: $white;
   z-index: 1000;
   width: 100%;
-  border-bottom: 5px solid $white;
+  border-bottom: 10px solid $red;
   ul {
     text-align: left;
     margin: 30px 0px;
@@ -115,17 +125,17 @@ nav.mobile {
       text-align: center;
       display: block;
       margin: 15px 0px;
-      &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-category-ancestor a, a:hover {
+      &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
         color: $black;
         padding: 15px 0px;
         border-bottom: 1px solid $black;
-        
+        font-weight: bold;
       }
       a {
         @include transition(all 0.2s ease-out);
         line-height: 1.4rem;
         display: inline-block;
-        color: $white;
+        color: $red;
         text-decoration: none;
         margin: 0px 10px;
         padding: 15px 0px;
@@ -157,11 +167,13 @@ nav.primary ul li:hover > ul {
       text-transform: none;
       font: $normal 1.8rem/2rem $regular;
       color: $black;
-      padding: 15px 0px;
+      padding: 15px 80px 15px 0px;
       margin: 0;
       border-bottom: none;
+      background: url('../img/black_arrow_icon.svg') center right no-repeat;
       &:hover {
         color: $red;
+        background: url('../img/red_arrow_icon.svg') center right no-repeat;
       }
     }
     &:last-child {
@@ -169,6 +181,7 @@ nav.primary ul li:hover > ul {
     }
     &.current-menu-item a, &.current_page_item a {
       color: $red;
+      background: url('../img/red_arrow_icon.svg') center right no-repeat;
     }
   }
 }

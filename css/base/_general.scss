@@ -202,21 +202,25 @@ aside {
     }
     ul {
       margin: 20px 0;
+      &.extra {
+        margin: -20px 0px 20px 0px;
+      }
       li {
         margin: 0;
         list-style: none;
         a {
           display: block;
-          padding: 10px 0;
+          padding: 10px 40px 10px 0px;
           margin: 0 30px;
           border-bottom: 1px solid $white;
           font: $normal 2.4rem/3.6rem $regular;
+          background: url('../img/white_arrow_icon.svg') center right no-repeat;
         }
         &.current, &.current_page_item, &.current_page_parent, &:hover {
           background: $red;
           a {
             margin: 0 30px;
-            padding: 10px 0px;
+            padding: 10px 40px 10px 0px;
             border-bottom: 1px solid transparent;
             font: $bold 2.4rem/3.6rem $regular;
           }

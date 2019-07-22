@@ -147,7 +147,7 @@
   position: relative;
   &:before {
     content: "";
-    background: url('../img/open_close_icon.svg') 0 0 no-repeat;
+    background: url('../img/red_arrow_icon.svg') 0 0 no-repeat;
     transform-origin: 30px 30px;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -163,7 +163,7 @@
   position: relative;
   &:before {
     content: "";
-    background: url('../img/open_close_icon.svg') 0 0 no-repeat;
+    background: url('../img/red_arrow_icon.svg') 0 0 no-repeat;
     transform-origin: 15px 15px;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -274,9 +274,6 @@
   }
 }
 
-
-
-
 .related {
   padding: $padding-half 0 0 0;
   h3 {
@@ -286,17 +283,35 @@
   ul {
     color: $red;
     li {
-      margin: 0;
-      padding: 10px 0px;
+      margin: 0px;
+      padding: 12px 0px;
       list-style: none;
       border-bottom: 1px solid #e0d1c8;
       &:first-child {
+        margin: 10px 0px 0px 0px;
         border-top: 1px solid #e0d1c8;
       }
       a {
+        background: url('../img/document_icon.svg') center left no-repeat;
+        background-size: contain;
         color: $red;
-        border-bottom: 1px solid $red;
+        text-decoration: underline;
+        border-bottom: none;
+        padding-left: 35px;
       }
+      &.link {
+        a {
+          background: url('../img/link_icon.svg') center left no-repeat;
+          background-size: contain;
+        }
+      }
+      &.pdf {
+        a {
+          background: url('../img/pdf_icon.svg') center left no-repeat;
+          background-size: contain;
+        }
+      }
+      
       
     }
   }

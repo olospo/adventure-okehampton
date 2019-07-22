@@ -152,7 +152,6 @@ while ( have_posts() ) : the_post(); ?>
         <div class="activity-scroll">
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <?php $icon = get_field('activity_icon'); ?>
-          
           <a href="<?php the_permalink(); ?>">
             <div class="circle">
               <img src="<?php echo $icon['url']; ?>">
