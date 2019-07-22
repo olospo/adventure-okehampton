@@ -1,12 +1,22 @@
 
 // Header
+.fixed_header {
+  position: fixed;
+  width: 100%;
+  top:0px;
+  z-index: 9999;
+}
 header {
+
   background: $red;
   .site-title {
     margin: 20px 0px;
   }
   .logo {
-    height: 70px;
+    height: 82px;
+    @media (min-width: $breakpoint-tablet) {
+      height: 70px;
+    } 
     svg path {
       fill: $white !important;
     }
@@ -93,7 +103,7 @@ header {
 nav.mobile {
   display: none;
   position: absolute;
-  top: 82px;
+  top: 70px;
   background: $white;
   z-index: 1000;
   width: 100%;

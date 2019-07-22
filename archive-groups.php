@@ -27,6 +27,8 @@ get_header(); ?>
               'showposts' => -1,
               'orderby'   => 'title',
               'order'     => 'ASC',
+              'post_parent' => '0'
+              
             ));  
           ?>
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>

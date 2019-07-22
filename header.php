@@ -14,7 +14,8 @@
 </head>
 <?php $color = get_field('page_colour_scheme'); ?>
 <body <?php body_class($color); ?>>
-<header class="fixed_header">
+<div class="fixed_header">
+<header>
   <div class="container"> 
     <div class="logo three columns">  
       <?php if ( is_front_page() ) { echo '<h1 class="site-title">'; } else { echo '<p class="site-title">'; } ?>
@@ -31,6 +32,7 @@
     </nav>
   </div>
 </header>
+</div>
 <!-- Mobile Menu -->
 <nav class="mobile seven columns">
   <?php wp_nav_menu( array( 'theme_location' => 'mobile_main' ) ); ?>

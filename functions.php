@@ -370,7 +370,7 @@ function custom_post_type() {
 		'label'               => __( 'Group', 'text_domain' ),
 		'description'         => __( 'Groups', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom fields' ),
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom fields' ),
 		'hierarchical'        => true,
 		'public'              => true,
 		'show_ui'             => true,
@@ -404,6 +404,66 @@ function current_type_nav_class($classes, $item) {
         array_push($classes, 'current_page_parent');
 
     return $classes;
+}
+
+
+// Get Parent ID
+function get_top_parent_page_id() { 
+	global $post; 
+ 
+	if ($post->ancestors) { 
+		return end($post->ancestors); 
+	} else { 
+		return $post->ID; 
+	} 
+}
+
+// 
+function get_ancestor() {
+global $post;
+if ($post->post_parent) {
+    $ancestors=get_post_ancestors($post->ID);
+    $root=count($ancestors)-1;
+    $parent = $ancestors[$root];
+} else {
+    $parent = $post->ID;
+}
+
+    return $parent;
+}
+
+class childNav_walker extends Walker_page {
+    public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
+        if($depth)
+            $indent = str_repeat("\t", $depth);
+        else
+            $indent = '';
+        extract($args, EXTR_SKIP);
+        $css_class = array('page_item');
+        if(!empty($current_page)) {
+            $_current_page = get_page( $current_page );
+            $children = get_children('post_type=page&post_status=publish&post_parent='.$page->ID);
+            if(count($children) != 0) {
+                // this is where you add your custom CSS class,
+                // change it to whatever you like.
+                $css_class[] = 'hasChildren';
+            }
+            if(isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors))
+                $css_class[] = 'current_page_ancestor';
+            if($page->ID == $current_page)
+                $css_class[] = 'current_page_item';
+            elseif($_current_page && $page->ID == $_current_page->post_parent)
+                $css_class[] = 'current_page_parent';
+        } elseif($page->ID == get_option('page_for_posts')) {
+            $css_class[] = 'current_page_parent';
+        }
+        $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
+        if($page->ID == $current_page) {
+            $output .= $indent .'<li class="' . $css_class . '">' . $page->post_title;
+        } else {
+            $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
+        }
+    }
 }
 
 ?>

@@ -210,14 +210,39 @@ aside {
           padding: 10px 0;
           margin: 0 30px;
           border-bottom: 1px solid $white;
+          font: $normal 2.4rem/3.6rem $regular;
         }
-        
         &.current, &.current_page_item, &:hover {
           background: $red;
           a {
             margin: 0 30px;
             padding: 10px 0px;
             border-bottom: 1px solid transparent;
+            font: $bold 2.4rem/3.6rem $regular;
+          }
+        }
+        &.current.parent {
+          a {
+            border-bottom: 1px solid $white;
+          }
+        }
+      }
+      ul.child {
+        display: none;
+      }
+      li.current ul.child{
+        display: block;
+        margin: 0;
+        li {
+          margin-left: 20px;
+          a {
+            font: $normal 2.4rem/3.6rem $regular;
+            border-bottom: 1px solid $white;
+          }
+          &.current {
+            a {
+              font: $bold 2.4rem/3.6rem $regular;
+            }
           }
         }
       }
