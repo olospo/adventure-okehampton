@@ -406,33 +406,7 @@ function current_type_nav_class($classes, $item) {
     return $classes;
 }
 
-
-// Get Parent ID
-function get_top_parent_page_id() { 
-	global $post; 
- 
-	if ($post->ancestors) { 
-		return end($post->ancestors); 
-	} else { 
-		return $post->ID; 
-	} 
-}
-
-// 
-function get_ancestor() {
-global $post;
-if ($post->post_parent) {
-    $ancestors=get_post_ancestors($post->ID);
-    $root=count($ancestors)-1;
-    $parent = $ancestors[$root];
-} else {
-    $parent = $post->ID;
-}
-
-    return $parent;
-}
-
-class childNav_walker extends Walker_page {
+class childNav extends Walker_page {
     public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
         if($depth)
             $indent = str_repeat("\t", $depth);
@@ -459,7 +433,7 @@ class childNav_walker extends Walker_page {
         }
         $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
         if($page->ID == $current_page) {
-            $output .= $indent .'<li class="' . $css_class . '">' . $page->post_title;
+            $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
         } else {
             $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
         }

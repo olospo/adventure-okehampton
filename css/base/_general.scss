@@ -212,7 +212,7 @@ aside {
           border-bottom: 1px solid $white;
           font: $normal 2.4rem/3.6rem $regular;
         }
-        &.current, &.current_page_item, &:hover {
+        &.current, &.current_page_item, &.current_page_parent, &:hover {
           background: $red;
           a {
             margin: 0 30px;
@@ -221,16 +221,16 @@ aside {
             font: $bold 2.4rem/3.6rem $regular;
           }
         }
-        &.current.parent {
+        &.current_page_item, &.current_page_parent {
           a {
             border-bottom: 1px solid $white;
           }
         }
       }
-      ul.child {
+      ul.children {
         display: none;
       }
-      li.current ul.child{
+      li.current_page_item ul.children, li.current_page_parent ul.children {
         display: block;
         margin: 0;
         li {
@@ -239,7 +239,7 @@ aside {
             font: $normal 2.4rem/3.6rem $regular;
             border-bottom: 1px solid $white;
           }
-          &.current {
+          &.current_page_item, &:hover {
             a {
               font: $bold 2.4rem/3.6rem $regular;
             }

@@ -28,57 +28,28 @@ $group = get_field('group_bookings');
     <aside class="all-activities four columns">
       <div class="content">
         <h3>All Groups</h3>
+        <?php
+        // Get the top page in the current tree
+        $ancestors = $post->ancestors;
+        // If this page isn't the top one in the tree
+        if($ancestors) {
+            // The last ancestor is highest in the tree
+            $topParentID = end($ancestors);
+        } else {
+            $topParentID = $post->ID;
+        }
+        echo '<ul class="children">';
+        wp_list_pages(array(
+            'post_type' => 'groups',
+            'title_li' => '',
+            'post_status' => 'publish',
+            'orderby'   => 'title',
+            'order'     => 'ASC',
+            'walker' => new childNav)
+        );
+        echo '</ul></li>';
+        ?>
 
-
-        <?php 
-          $current_post = $post->ID;        
-            query_posts(array( 
-              'post_type' => 'groups',
-              'showposts' => -1,
-              'orderby'   => 'title',
-              'order'     => 'ASC',
-              'post_parent' => 0
-              
-            ));  
-          ?>
-          <?php  ?>
-        <ul>
-        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <li <?php $args = array( 'post_parent' => get_the_ID() ); $children = get_children( $args ); ?> class="
-          <?php if ( ! empty($children) AND ($current_post == $post->ID) ) { echo 'current'; }
-            if ( ! empty($children) AND get_ancestor($current_post)) { echo ' parent'; }
-            if ( ! empty($children) AND ( get_post_ancestors( $post->ID ))) { echo ' ancestor'; } ?>
-            
-          "><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
-          
-          <?php $args = array( 'post_parent' => get_the_ID() ); $children = get_children( $args );
-            if ( ! empty($children) ){ ?>
-            <?php global $post;
-
-            $args = array(
-                'post_parent' => $post->ID,
-                'posts_per_page' => -1,
-                'post_type' => 'groups', //you can use also 'any'
-                );
-            
-            $the_query = new WP_Query( $args );
-            // The Loop
-            if ( $the_query->have_posts() ) : ?>
-            <ul class="child <?php if (get_ancestor($current_post)) { echo ' parent'; } ?>">
-            <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-            <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-            <?php endwhile; ?>
-            </ul>
-            <?php
-            endif;
-            // Reset Post Data
-            wp_reset_postdata(); ?>
-            
-          <?php } ?>
-          </li>
-        <?php endwhile; ?>
-        </ul>
-        <?php else : endif; wp_reset_query(); ?>
       </div>
     </aside>
     <div class="content eight columns">
