@@ -528,7 +528,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": 35
                 }
             ]
         }
@@ -566,5 +566,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563444349
+    "modified": 1563813513
 }
