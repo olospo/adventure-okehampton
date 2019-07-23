@@ -5,7 +5,7 @@ get_header(); ?>
   <div class="float">
     <div class="container">
       <div class="content six columns offset-by-three">
-        <h1>Activities</h1>
+        <h1><?php post_type_archive_title(); ?></h1>
       </div>
     </div>
   </div>

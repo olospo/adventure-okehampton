@@ -5,6 +5,7 @@ function theme_setup() {
   register_nav_menu( 'main', 'Main Menu' );
   register_nav_menu( 'mobile_main', 'Mobile Main Menu' );
   register_nav_menu( 'footer', 'Footer Menu' );
+  register_nav_menu( 'extra_footer', 'Extra Footer Menu' );
   // RSS Feed
   add_theme_support( 'automatic-feed-links' );
   // Thumbnails

@@ -112,28 +112,39 @@
 
 <footer class="links">
   <div class="container">
-    <div class="one-third column">
+    <div class="about two columns">
       About Us
+      <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
     </div>
-    <div class="one-third column">
-      Follow us
+    <div class="follow five columns">
+      <h4>Follow us</h4>
+      <p>@AdventureOke</p>
+      <p>Ducks all retrieved from Race 1. Still selling ducks for races 2 to 4. All for a good cause! @Rota- ryGBI @VisitDartmoor @DevonWildlife @BBCDevon #funinthepark</p>
     </div>
-    <div class="one-third column">
-      How to find us
+    <div class="find five columns">
+      <h4>How to find us</h4>
+      <p>Map and instructions here</p>
     </div>
-    <div class="copyright-links">
-<!--
-      <?php // wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
-      <p>&copy; <?php the_date('Y'); ?> Company Name</p>
--->
+    <div class="copyright-links twelve columns ">
+      <?php wp_nav_menu( array( 'theme_location' => 'extra_footer' ) ); ?> &copy; <?php the_time('Y'); ?> Adventure Okehampton all rights reserved
+      <ul class="contact_details"><li><?php the_field('address','options'); ?></li><li>E: <a href="mailto:<?php the_field('email','options'); ?>"><?php the_field('email','options'); ?></a></li><li>T: <a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a></li></ul>
     </div>
   </div>
 </footer>
+<?php if( have_rows('accreditations','options') ): ?>
 <footer class="accreditations">
   <div class="container">
-    Accreditation images/links here.
+    <?php while( have_rows('accreditations','options') ): the_row(); 
+    // vars
+    $image = get_sub_field('accreditation_image','options');
+    ?>
+    <div class="accreditation">
+      <img src="<?php echo $image['url']; ?>" />
+    </div>
+    <?php endwhile; ?>
   </div>
 </footer>
+<?php endif; wp_reset_postdata(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
