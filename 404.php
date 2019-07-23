@@ -1,7 +1,7 @@
 <?php /* 404 Page */
 get_header(); ?>
 
-<section class="page">
+<section class="hero not_found">
   <div class="container">
     <div class="twelve columns">
       <div class="content">
