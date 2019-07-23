@@ -12,6 +12,48 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
   }
 });
 
+$('.quick.slide_one').slick({
+  autoplay:true,
+  dots: true,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 1000,
+  autoplaySpeed: 3000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  centerMode: true,
+  centerPadding: 0
+});
+
+$('.quick.slide_two').slick({
+  autoplay:true,
+  dots: true,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 1000,
+  autoplaySpeed: 3000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  centerMode: true,
+  centerPadding: 0
+});
+
+$('.quick.slide_three').slick({
+  autoplay:true,
+  dots: true,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 1000,
+  autoplaySpeed: 3000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  centerMode: true,
+  centerPadding: 0
+});
+
 
 $('.testimonials').slick({
   autoplay:true,
@@ -19,6 +61,7 @@ $('.testimonials').slick({
   infinite: true,
   cssEase: 'linear',
   speed: 700,
+  autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
   fade: true,

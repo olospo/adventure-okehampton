@@ -5,7 +5,27 @@
     margin-top: $padding;
     border-top: 2px dashed $black;
   }
+  @media (min-width: $breakpoint-tablet) {
+    .slick-slider {
+      &.slide_one {
+        margin: 0;
+      }
+      &.slide_two, &.slide_three {
+        margin-left: 4%;
+      }
+      
+    }
+  }
+  .slick-dots {
+    top: 200px;
+    height: 40px;
+  }
   article {
+    position: relative;
+    &.slick-slide {
+      padding: 0 !important;
+      
+    }
     &.blue {
       background: $blue;
       .button {
@@ -33,7 +53,7 @@
       padding: 30px;
       h3 {
         font: $normal 3.2rem/4.0rem $headline;
-        margin-bottom: 30px;
+        margin: 20px 0px;
       }
       p {
         font: $normal 1.8rem/2.8rem $regular;

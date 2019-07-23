@@ -1,30 +1,93 @@
 <?php /* Footer */ ?>
 <section class="quick-links">
   <div class="container">
-    <article class="blue one-third column">
-      <img src="https://via.placeholder.com/600x300" />
-      <div class="content">
-        <h3>About Us</h3>
-        <p>Now booking for our 2019 daily adventures programme. The most popular activities are gorge scrambling, rock climbing, high ropes and paddlesports.</p>
-        <a href="#" class="button">View All</a>
-      </div>
-    </article>
-    <article class="red one-third column">
-      <img src="https://via.placeholder.com/600x300" />
-      <div class="content">
-        <h3>Accommodation</h3>
-        <p>Looking for an exciting weekend break or a fun family activity holiday or just a campsite? We have a range of sites that cater for individuals, families and larger groups.</p>
-        <a href="#" class="button">View All</a>
-      </div>
-    </article>
-    <article class="green one-third column">
-      <img src="https://via.placeholder.com/600x300" />
-      <div class="content">
-        <h3>Special Offers</h3>
-        <p>We are now booking for 2019/20 school activity residentials, activity days and group events. Special offers with reduced prices on our winter.</p>
-        <a href="#" class="button">Call Today</a>
-      </div>
-    </article>
+    <?php if( have_rows('quick_link_one','options') ): ?>
+    <div class="quick slide_one one-third column">
+    	<?php while( have_rows('quick_link_one','options') ): the_row(); 
+    		// vars
+    		$imageOne = get_sub_field('image_one','options');
+    		$title = get_sub_field('title','options');
+    		$content = get_sub_field('description','options');
+    		$link = get_sub_field('button_link','options');
+    		$linkText = get_sub_field('button_text','options');
+    		
+    		// thumbnail
+      	$size = 'featured-img';
+      	$thumb = $imageOne['sizes'][ $size ];
+      	$width = $imageOne['sizes'][ $size . '-width' ];
+      	$height = $imageOne['sizes'][ $size . '-height' ];
+    
+    		?>
+    		<article class="blue">
+          <img src="<?php echo $thumb; ?>" />
+          <div class="content">
+            <h3><?php echo $title; ?></h3>
+            <p><?php echo $content; ?></p>
+            <a href="<?php echo $link; ?>" class="button"><?php echo $linkText; ?></a>
+          </div>
+        </article>
+    	<?php endwhile; ?>
+    </div>
+    <?php endif; wp_reset_postdata(); ?>
+    
+    <?php if( have_rows('quick_link_two','options') ): ?>
+    <div class="quick slide_two one-third column">
+    	<?php while( have_rows('quick_link_two','options') ): the_row(); 
+    		// vars
+    		$imageTwo = get_sub_field('image_two','options');
+    		$title = get_sub_field('title','options');
+    		$content = get_sub_field('description','options');
+    		$link = get_sub_field('button_link','options');
+    		$linkText = get_sub_field('button_text','options');
+    		
+    		// thumbnail
+      	$size = 'featured-img';
+      	$thumb = $imageTwo['sizes'][ $size ];
+      	$width = $imageTwo['sizes'][ $size . '-width' ];
+      	$height = $imageTwo['sizes'][ $size . '-height' ];
+    
+    		?>
+    		<article class="red">
+          <img src="<?php echo $thumb;  ?>" />
+          <div class="content">
+            <h3><?php echo $title; ?></h3>
+            <p><?php echo $content; ?></p>
+            <a href="<?php echo $link; ?>" class="button"><?php echo $linkText; ?></a>
+          </div>
+        </article>
+    	<?php endwhile; ?>
+    </div>
+    <?php endif; wp_reset_postdata(); ?>
+    
+    <?php if( have_rows('quick_link_three','options') ): ?>
+    <div class="quick slide_three one-third column">
+    	<?php while( have_rows('quick_link_three','options') ): the_row(); 
+    		// vars
+    		$imageThree = get_sub_field('image_three','options');
+    		$title = get_sub_field('title','options');
+    		$content = get_sub_field('description','options');
+    		$link = get_sub_field('button_link','options');
+    		$linkText = get_sub_field('button_text','options');
+    		
+        // thumbnail
+      	$size = 'featured-img';
+      	$thumb = $imageThree['sizes'][ $size ];
+      	$width = $imageThree['sizes'][ $size . '-width' ];
+      	$height = $imageThree['sizes'][ $size . '-height' ];
+    
+    		?>
+    		<article class="green">
+          <img src="<?php echo $thumb; ?>" />
+          <div class="content">
+            <h3><?php echo $title; ?></h3>
+            <p><?php echo $content; ?></p>
+            <a href="<?php echo $link; ?>" class="button"><?php echo $linkText; ?></a>
+          </div>
+        </article>
+    	<?php endwhile; ?>
+    </div>
+    <?php endif; wp_reset_postdata(); ?>
+
   </div>
 </section>
 <section class="social">
