@@ -1,11 +1,17 @@
 <?php /* Archive */
-get_header(); ?>
+get_header(); 
+// Vars
+$title = get_field('activities_title','options');
+$content = get_field('activities_content','options');
+$bgimage = get_field('activities_background_image','options');
 
-<section class="activity hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php bloginfo('template_directory'); ?>/img/stockphoto-2.jpg ') center center no-repeat; background-size: cover;">
+?>
+
+<section class="activity hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(<?php echo $bgimage['url']; ?>) center center no-repeat; background-size: cover;">
   <div class="float">
     <div class="container">
       <div class="content six columns offset-by-three">
-        <h1><?php post_type_archive_title(); ?></h1>
+        <h1><?php echo $title; ?></h1>
       </div>
     </div>
   </div>
@@ -15,8 +21,8 @@ get_header(); ?>
   <div class="container">
     <div class="twelve columns">
       <div class="intro_content">
-        <div class="content twelve columns">
-<!--           <h1>Activities</h1> -->
+        <div class="content ten columns offset-by-one">
+          <?php echo $content; ?>
         </div>
       </div>
       <div class="main_content">

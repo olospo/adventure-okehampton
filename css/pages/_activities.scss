@@ -72,6 +72,18 @@
       opacity: 1;
     }
   }
+  .intro_content {
+    .content {
+      text-align: center;
+      padding-bottom: $padding;
+      p {
+        &:first-child {
+          font: $bold 3.6rem/4.4rem $regular;
+        }
+        font: $normal 2.4rem/3.4rem $regular;
+      }
+    }
+  }
 }
 
 .contact_cta {

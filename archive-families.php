@@ -2,9 +2,9 @@
 get_header(); 
 
 // Vars
-$title = get_field('groups_title','options');
-$content = get_field('groups_content','options');
-$bgimage = get_field('groups_background_image','options');
+$title = get_field('families_title','options');
+$content = get_field('families_content','options');
+$bgimage = get_field('families_background_image','options');
 
 ?>
 
@@ -30,7 +30,7 @@ $bgimage = get_field('groups_background_image','options');
         <div class="twelve columns">
           <?php 
             query_posts(array( 
-              'post_type' => 'groups',
+              'post_type' => 'families',
               'showposts' => -1,
               'orderby'   => 'title',
               'order'     => 'ASC',
