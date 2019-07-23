@@ -547,6 +547,13 @@
                 "operator": "==",
                 "value": "groups"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "adventure-days"
+            }
         ]
     ],
     "menu_order": 0,
@@ -566,5 +573,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563813513
+    "modified": 1563894407
 }

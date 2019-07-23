@@ -33,7 +33,7 @@ header {
   }
   nav.primary {
     display: none;
-    font: $normal 2.4rem/3rem $headline;
+    font: $normal 2.2rem/3rem $headline;
     text-transform: uppercase;
     ul {
       line-height:1em;
@@ -45,7 +45,7 @@ header {
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $white;
           border-bottom: 5px solid $white;
-          margin: 28px 15px;
+          margin: 28px 12px;
           padding: 15px 5px;
         }
         &.menu-item-has-children a {
@@ -53,22 +53,23 @@ header {
           padding: 15px 30px 15px 5px;
         }
         a {
+          font: $normal 2.0rem/3rem $headline;
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
           color: $white;
           text-decoration: none;
-          margin: 28px 15px;
+          margin: 28px 12px;
           padding: 15px 5px;
           border-bottom: 5px solid transparent;
           
         }
         &.button {
-          
           display: inline-block !important;
+          padding: 0;
           a {
             margin: 0px;
-            padding: 5px;
+            padding: 15px 20px;
             border-bottom: none;
             color: $red;
           }
@@ -148,7 +149,7 @@ nav.mobile {
 nav.primary ul ul {
   display: none; 
   position: absolute;
-  top: 115px;
+  top: 111px;
   z-index: 9999;
   background: $white;
   margin: 0;
