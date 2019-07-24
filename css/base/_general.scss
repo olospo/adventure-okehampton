@@ -189,6 +189,38 @@ section {
       display: inline;
     }
   }
+  .nf-form-layout {
+    form {
+      label {
+        font: $normal 2.4rem/3.4rem $regular;
+        font-weight: 300 !important;
+        color: $red;
+      }
+      
+      select, input, textarea {
+        font: $normal 2.4rem/3.4rem $regular;
+        background: transparent;
+        border: 1px solid $black;
+        padding: 10px;
+        &:focus {
+          border: 1px solid $red;
+        }
+      }
+      select {
+        background: url('../img/select_icon.svg') 98% center no-repeat;
+      }
+      input[type="button"] {
+        margin: 0;
+        @extend .button
+      }
+      input.datepicker {
+        background: url('../img/date_icon.svg') 95% center no-repeat;
+      }
+      .submit-wrap {
+        text-align: left;
+      }
+    }
+  }
 }
 
 aside {

@@ -17,7 +17,7 @@ $group = get_field('group_bookings');
     <div class="container">
       <div class="content six columns offset-by-three">
         <h1><?php the_title(); ?></h1>
-        <?php if ($individual) { ?><a href="#" class="button white">Individual Booking</a><?php } if ($group) { ?><a href="#" class="button">Group Enquiry</a><?php } ?>
+        <?php if ($individual) { ?><script bt='Individual Booking' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script><?php } if ($group) { ?><a href="<?php echo get_site_url(); ?>/group-booking" class="button">Group Enquiry</a><?php } ?>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ $group = get_field('group_bookings');
         echo '</ul></li>';
         ?>
         <ul class="extra">
-        <li><a href="#">Group booking Enquiries</a></li>
+        <li><a href="<?php echo get_site_url(); ?>/group-booking">Group booking Enquiries</a></li>
         </ul>
       </div>
     </aside>
@@ -114,7 +114,7 @@ $group = get_field('group_bookings');
             <div class="content">
               <h3>For Individual Bookings</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="#" class="button">Book Now</a>
+              <script bt='Book Now' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script>
             </div>
           </div>
           <?php } ?>
@@ -123,7 +123,7 @@ $group = get_field('group_bookings');
             <div class="content">
               <h3>For Group Bookings</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="#" class="button white">Group Enquiry</a>
+              <a href="<?php echo get_site_url(); ?>/group-booking" class="button white">Group Enquiry</a>
             </div>
           </div>
           <?php } ?>
