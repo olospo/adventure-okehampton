@@ -27,6 +27,7 @@
     }
     &:nth-child(3n+4) {
       margin-left: 0;
+      clear: left;
     }
     .image {
       position: relative;
