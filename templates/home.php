@@ -9,7 +9,7 @@ $video = get_field('video');
 
 while ( have_posts() ) : the_post(); ?>
 
-<section class="hero" <?php if( $heroType == 'image' ): ?> style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;"<?php endif; ?>>
+<section class="activity hero" <?php if( $heroType == 'image' ): ?> style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;"<?php endif; ?>>
   <?php if( $heroType == 'video' ): ?>
   <style>
   .video-area {
@@ -68,23 +68,8 @@ while ( have_posts() ) : the_post(); ?>
     <div class="container">
       <div class="content eight columns offset-by-two">
       <h1><?php echo $title; ?></h1>
-      <form>
-        <select class="activity">
-          <option value="" selected>Activity Type</option>
-          <option value="text">Text</option>
-          <option value="text">Text</option>
-          <option value="text">Text</option>
-          <option value="text">Text</option>
-        </select>
-        <select class="party">
-          <option value="" selected>Your Party</option>
-          <option value="text">Text</option>
-          <option value="text">Text</option>
-          <option value="text">Text</option>
-          <option value="text">Text</option>
-        </select>
-        <input type="submit" value="Book Now">
-      </form>
+      <script bt='Individual Booking' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script>
+      <a href="<?php echo get_site_url(); ?>/group-booking" class="button">Group Enquiry</a>
       </div>
     </div>
   </div>
