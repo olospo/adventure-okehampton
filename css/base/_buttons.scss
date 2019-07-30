@@ -1,5 +1,18 @@
 /* Buttons */
 
+@-webkit-keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
 .button {
   display: inline-block;
   padding: 15px 50px;
@@ -10,11 +23,21 @@
   background: $red;
   color: $white;
   border: none;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   &:hover {
     text-decoration: none;
-    // background: $black;
-    // color: $white;
     border: none;
+    -webkit-animation-name: hvr-pop;
+    animation-name: hvr-pop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
   }
   &.white {
     background: $white;
@@ -23,6 +46,10 @@
   &.red {
     background: $red;
     color: $white;
+    &:hover {
+      background: $white;
+      color: $red;
+    }
   }
 }
 // Booking Hound fixes

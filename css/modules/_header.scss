@@ -8,7 +8,7 @@
 }
 header {
   background: $red;
-  
+  box-shadow: 0px 5px 21px rgba(0, 0, 0, 0.62);
   .logo {
     height: 80px;
     @media (min-width: $breakpoint-tablet) {
