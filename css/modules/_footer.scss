@@ -102,20 +102,18 @@
       padding: 20px 0 15px 0 !important;
     }
     .cff-page-name {
-      font: $bold 1.8rem/2.8rem $regular !important;
+      font: $bold 1.8rem/2.2rem $regular !important;
       text-decoration: underline;
     }
     .cff-date {
       color: $white !important;
-      font: $normal 1.8rem/2.8rem $regular !important;
+      font: $normal 1.6rem/2.6rem $regular !important;
     }
     .cff-author img {
       border-radius: 0 !important;
     }
   }
 }
-
-
 
 .newsletter {
   padding: $padding 0;
@@ -127,15 +125,18 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  
 }
+
 footer {
   &.links {
     padding: $padding 0px $padding-half 0;
-    color: $white;
+    color: #655f6f;
     background: $black;
+    a {
+      color: #655f6f;
+    }
     .about {
-      
+
     }
     .find, .follow {
       h4 {
@@ -166,7 +167,7 @@ footer {
           padding-right: 20px;
           a {
             padding: 0;
-            color: $white;
+            color: #655f6f;
           }
           &:last-child {
             border-right: none;

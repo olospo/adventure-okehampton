@@ -120,7 +120,7 @@
     </div>
     <div class="follow five columns">
       <h4>Follow us</h4>
-      <?php echo do_shortcode('[ap-twitter-feed-slider]'); ?>
+      <?php echo do_shortcode('[custom-twitter-feeds]'); ?>
     </div>
     <div class="find five columns">
       <h4>How to find us</h4>

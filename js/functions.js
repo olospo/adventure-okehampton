@@ -81,6 +81,7 @@ $('#cff').slick({
   centerPadding: 0
 });
 
+
 $('.activity-slider').slick({
   autoplay:true,
   dots: true,
