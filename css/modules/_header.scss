@@ -34,6 +34,7 @@ header {
   nav.primary {
     display: none;
     font: $normal 2.2rem/3rem $headline;
+    letter-spacing: 1px;
     text-transform: uppercase;
     ul {
       line-height:1em;
@@ -45,7 +46,7 @@ header {
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $white;
           border-bottom: 5px solid $white;
-          margin: 28px 12px;
+          margin: 28px 10px;
           padding: 15px 5px;
         }
         &.menu-item-has-children a {
@@ -59,7 +60,7 @@ header {
           display: block;
           color: $white;
           text-decoration: none;
-          margin: 28px 12px;
+          margin: 28px 10px;
           padding: 15px 5px;
           border-bottom: 5px solid transparent;
           

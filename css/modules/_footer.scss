@@ -17,7 +17,7 @@
     }
   }
   .slick-dots {
-    top: 220px;
+    top: 200px;
     height: 40px;
   }
   article {
@@ -54,6 +54,8 @@
       h3 {
         color: $white;
         font: $normal 3.2rem/4.0rem $headline;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         margin: 20px 0px;
       }
       p {
@@ -73,11 +75,15 @@
   h3 {
     text-align: center;
     font: $normal 6.0rem/6.0rem $headline;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     color: $white;
     margin-bottom: 60px;
   }
   h4 {
     font: $normal 3.4rem/4.0rem $headline;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     color: $white;
     border-bottom: 1px solid $white;
     margin-bottom: 10px;
@@ -91,6 +97,8 @@
   h3 {
     color: $white;
     font: $normal 3.2rem/4.0rem $headline;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   
 }
@@ -106,6 +114,8 @@ footer {
       h4 {
         color: $white;
         font: $normal 3.2rem/4.0rem $headline;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         border-bottom: 1px dashed $white;
         margin-bottom: 10px;
         padding-bottom: 10px;

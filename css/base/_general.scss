@@ -1,7 +1,6 @@
 // Avenir
 $regular: 'Stag', Helvetica, Arial, sans-serif;
-
-$headline: 'Headline One', Oswald, Helvetica, Arial, sans-serif;
+$headline: 'Headline One', Oswald, Helvetica, Arial, sans-serif; 
 
 // Weights
 $normal: 300;
@@ -75,6 +74,9 @@ body {
 h1, h2, h3 {
   font-family: $headline;
   letter-spacing: 1px;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
 }
 
 h4 {
@@ -112,18 +114,21 @@ section {
     font: $normal 3.6rem/5rem $headline;
     margin-bottom: 20px;
     font-size: 3.6rem;
+    letter-spacing: 1px;
   }
   h2 {
     font: $normal 3.6rem/5rem $headline;
     margin-bottom: 10px;
     font-size: 3.6rem;
     line-height: 5rem;
+    letter-spacing: 1px;
     
   }
   h3 {
     font: $normal 2rem/2.6rem $headline;
     margin-bottom: 10px;
     font-size: 2rem;
+    letter-spacing: 1px;
   }
   h4 {
     font: $normal 1.8rem/2.4rem $regular;
@@ -232,6 +237,7 @@ aside {
       padding: 30px 30px 0 30px;
       color: $white;
       font: $normal 4.2rem/5rem $headline;
+      text-transform: uppercase;
     }
     ul {
       margin: 20px 0;

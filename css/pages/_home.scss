@@ -12,6 +12,7 @@ form {
     box-sizing: border-box;
     margin: 10px 10px 10px 0;
     font: $normal 2.4rem/3.2rem $headline;
+    text-transform: uppercase;
     border-radius: 0;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -22,6 +23,7 @@ form {
     margin: 10px 10px 10px 0;
     padding: .7em 3.4em .7em .7em;
     font: $normal 2.4rem/3.2rem $headline;
+    text-transform: uppercase;
     border: none;
     background: $red;
     color: $white;
@@ -37,6 +39,7 @@ form {
     p {
       display: inline-block;
       font: $normal 5.2rem/5.6rem $headline;
+      text-transform: uppercase;
       margin-bottom: 20px;
     }
     footer {
@@ -52,6 +55,7 @@ form {
   h2 {
     color: $red;
     font: $normal 5.2rem/5.6rem $headline;
+    text-transform: uppercase;
     margin-bottom: 20px;
   }
   p {
@@ -60,6 +64,7 @@ form {
   .activity-scroll {
     margin: 40px 0px 60px 0px;
     font: $normal 3.0rem/3.6rem $headline;
+    text-transform: uppercase;
     a:hover .circle {
       transition: transform 0.5s;
       transform: scale(1.0);
