@@ -165,3 +165,14 @@ footer {
     }
   }
 }
+a.back_to_top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 0px;
+	top: 75%;
+	background: $white url("../img/back_to_top_icon.svg") no-repeat center center;	
+}

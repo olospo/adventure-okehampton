@@ -18,7 +18,7 @@ $thecontent = get_the_content();
 if(!empty($thecontent)) { ?>
 <section class="post">
   <div class="container">
-    <div class="content eight columns">
+    <div class="content ten columns offset-by-one">
       <?php the_content(); ?>
     </div>
   </div>
@@ -26,7 +26,5 @@ if(!empty($thecontent)) { ?>
 <?php } ?>
 
 <?php endwhile; // end of the loop. ?>
-
-<?php get_template_part( 'inc/components' ); ?>
 
 <?php get_footer(); ?>

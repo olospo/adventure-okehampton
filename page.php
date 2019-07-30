@@ -6,7 +6,7 @@ get_header(); ?>
 
 <section class="page">
   <div class="container">
-    <div class="content eight columns offset-by-two">
+    <div class="content ten columns offset-by-one">
       <?php the_content(); ?>
     </div>
   </div>

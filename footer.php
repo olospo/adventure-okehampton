@@ -145,6 +145,7 @@
   </div>
 </footer>
 <?php endif; wp_reset_postdata(); ?>
+<a href="#" class="back_to_top">Back to Top</a>
 <?php wp_footer(); ?>
 </body>
 </html>
