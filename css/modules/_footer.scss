@@ -89,7 +89,34 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
   }
+  // Instagram 
+  .instagram {
+    a {
+      border-bottom: none;
+    }
+  }
+  // Facebook
+  #cff { 
+    .cff-item {
+      clear: none !important;
+      padding: 20px 0 15px 0 !important;
+    }
+    .cff-page-name {
+      font: $bold 1.8rem/2.8rem $regular !important;
+      text-decoration: underline;
+    }
+    .cff-date {
+      color: $white !important;
+      font: $normal 1.8rem/2.8rem $regular !important;
+    }
+    .cff-author img {
+      border-radius: 0 !important;
+    }
+  }
 }
+
+
+
 .newsletter {
   padding: $padding 0;
   background: $green;

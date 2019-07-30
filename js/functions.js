@@ -67,6 +67,20 @@ $('.testimonials').slick({
   fade: true,
 });
 
+$('#cff').slick({
+  autoplay:true,
+  dots: true,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 1000,
+  autoplaySpeed: 3000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  centerMode: true,
+  centerPadding: 0
+});
+
 $('.activity-slider').slick({
   autoplay:true,
   dots: true,
