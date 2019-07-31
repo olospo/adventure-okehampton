@@ -5,66 +5,57 @@ get_header();
 $title = get_field('title');
 $heroType = get_field('image_video');
 $image = get_field('background_image');
-$video = get_field('video');
+$videoType = get_field('upload_or_link');
+$videoLink = get_field('link_video');
+$videomp4 = get_field('upload_video_mp4');
+$videowebm = get_field('upload_video_webm');
 
 while ( have_posts() ) : the_post(); ?>
 
-<section class="activity hero" <?php if( $heroType == 'image' ): ?> style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;"<?php endif; ?>>
+<section class="home hero <?php if ( $videoType == 'link' ): // Video Link ?>video-link<?php endif; ?>" <?php if( $heroType == 'image' ): ?> style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;"<?php endif; ?>>
   <?php if( $heroType == 'video' ): ?>
-  <style>
-  .video-area {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .video-area iframe {
-    width: 100vw;
-    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-    min-height: 100vh;
-    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  </style>
-  <div class="video-area">
-    <?php
-    // get iframe HTML
-    $iframe = get_field('video');
-    
-    // use preg_match to find iframe src
-    preg_match('/src="(.+?)"/', $iframe, $matches);
-    $src = $matches[1];
-    
-    // add extra params to iframe src
-    $params = array(
-      'controls'    => 0,
-      'hd'          => 1,
-      'autohide'    => 1,
-      'autoplay'    => 1,
-      'showinfo'    => 0,
-      'loop'        => 1
-    );
-    
-    $new_src = add_query_arg($params, $src);
-    $iframe = str_replace($src, $new_src, $iframe);
-    
-    
-    // add extra attributes to iframe html
-    $attributes = 'frameborder="0"';
-    $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-    
-    // echo $iframe
-    echo $iframe; ?>
-
-  </div>
+    <?php if ( $videoType == 'link' ): // Video Link ?>
+    <div class="video-area">
+      <?php
+      // get iframe HTML
+      $iframe = get_field('video');
+      
+      // use preg_match to find iframe src
+      preg_match('/src="(.+?)"/', $iframe, $matches);
+      $src = $matches[1];
+      
+      // add extra params to iframe src
+      $params = array(
+        'controls'    => 0,
+        'hd'          => 1,
+        'autohide'    => 1,
+        'autoplay'    => 1,
+        'showinfo'    => 0,
+        'loop'        => 1
+      );
+      
+      $new_src = add_query_arg($params, $src);
+      $iframe = str_replace($src, $new_src, $iframe);
+      
+      
+      // add extra attributes to iframe html
+      $attributes = 'frameborder="0"';
+      $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+      
+      // echo $iframe
+      echo $iframe; ?>   
+    </div>
+    <?php endif; ?>
+    <?php if ( $videoType == 'upload' ): // Video Upload ?>
+      <div class="video-upload">
+        <video muted autoplay preload="auto" loop>
+          <source src="<?php echo $videomp4; ?>" type="video/mp4">
+          <source src="<?php echo $videowebm; ?>" type="video/webm">
+        </video>
+      </div>
+    <?php endif; ?>
   <?php endif; ?>
-  <div class="float <?php if($video) : ?>video<?php endif; ?>">
+  <div class="float <?php if( $videoType == 'upload' ): ?>video<?php endif; ?>">
     <div class="container">
       <div class="content eight columns offset-by-two">
       <h1><?php echo $title; ?></h1>
