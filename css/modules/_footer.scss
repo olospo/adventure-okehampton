@@ -124,6 +124,30 @@
     font: $normal 3.2rem/4.0rem $headline;
     letter-spacing: 1px;
     text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  input {
+    font: $normal 1.8rem/2.8rem $regular;
+    background: $white;
+    border: 3px solid $white;
+    padding: 10px;
+    display: inline-block;
+    margin: 0;
+    &:focus {
+      border: 3px solid $red;
+    }
+    &.email {
+      min-width: 300px;
+    }
+    &.button {
+      font: $normal 2.6rem/2.8rem $headline;
+      display: inline-block;
+      margin: 0;
+      padding: 0.5em 1em;
+      margin-top: -3px;
+      margin-left: -2px;
+      cursor: pointer;
+    }
   }
 }
 
