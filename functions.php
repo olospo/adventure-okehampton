@@ -47,11 +47,11 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
 // Update Checker
 require 'plugin-update-checker/plugin-update-checker.php';
 	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/Futurekings/wordpress',
+    'https://github.com/olospo/adventure-okehampton',
     __FILE__
 );
 
-$myUpdateChecker->setAuthentication('678b682754ab56a93b51ec4f7110f914fd9a9058');
+$myUpdateChecker->setAuthentication('9f221f9576ba2c616882ebd3c2460f07521cad39');
 $myUpdateChecker->setBranch('master');
 
 // Options Page
