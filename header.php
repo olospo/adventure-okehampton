@@ -25,7 +25,13 @@
       <?php if ( is_front_page() ) { echo '</h1>'; } else { echo '</p>'; } ?>
     </div>
     <!-- Mobile Menu Trigger -->
-    <div class="mobile_menu"></div>
+    <!-- <div class="mobile_menu"></div> -->
+    <a href="#" class="menu-toggle mobile_menu" aria-controls="primary-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
     <!-- Main Menu -->
     <nav class="primary ten columns">
       <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
@@ -34,6 +40,6 @@
 </header>
 </div>
 <!-- Mobile Menu -->
-<nav class="mobile seven columns">
+<nav class="mobile">
   <?php wp_nav_menu( array( 'theme_location' => 'mobile_main' ) ); ?>
 </nav>

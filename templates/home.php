@@ -115,7 +115,7 @@ while ( have_posts() ) : the_post(); ?>
     <h2>Activities</h2>
     <p>We have 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
     </div>
-    <div class="twelve columns">
+    <div class="ten columns offset-by-one">
       <?php $current_post = $post->ID;        
       query_posts(array( 
         'post_type' => 'activities',

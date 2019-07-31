@@ -107,7 +107,8 @@
 .activity-slider {
   margin-bottom: 100px !important;
   .slick-slide {
-    padding: 0 20px 0 0;
+    padding: 0 10px 0 10px;
+    width: 100%;
   }
   ul.slick-dots {
     li {
@@ -118,6 +119,23 @@
         border: 1px solid $red;
       }
     }
+  }
+  .slick-prev, .slick-next {
+    z-index: 3;
+    @media (max-width: $breakpoint-tablet) {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+  }
+  .slick-prev {
+    left: 30px;
+    background: url('../img/slider_left_white.svg') center center no-repeat;
+  }
+  
+  .slick-next {
+    right: 30px;
+    background: url('../img/slider_right_white.svg') center center no-repeat;
   }
 }
 

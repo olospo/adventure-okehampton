@@ -1,7 +1,7 @@
 <article class="standard one-third column">
   <div class="item_image">
     <a href="<?php the_permalink(); ?>">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/thumbnail-pattern.png" style="background: url(<?php the_post_thumbnail_url( 'featured-img' ); ?>) center center black; background-size: cover;" >
+      <img src="<?php the_post_thumbnail_url( 'featured-img' ); ?>" />
     </a>
   </div>
   <div class="item_content">

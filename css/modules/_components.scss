@@ -10,7 +10,7 @@ section.hero{
   padding: 160px 0px;
   overflow: hidden;
   margin-top: 80px;
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     margin-top: 111px;
   }
   .content {

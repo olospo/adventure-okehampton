@@ -1,5 +1,6 @@
 $(".mobile_menu").click(function() {
   $('nav.mobile').fadeToggle();
+  $(this).toggleClass("open");
 });
 
 $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 768px
@@ -121,14 +122,21 @@ $('.activity-scroll').slick({
   slidesToScroll: 5,  
   responsive: [
     {
-      breakpoint: 900,
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4
+      }
+    },
+    {
+      breakpoint: 1000,
       settings: {
         slidesToShow: 3,
         slidesToScroll:3
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 600,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
