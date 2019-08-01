@@ -161,9 +161,25 @@
   margin-bottom: $padding-half;
   p {
     &:first-child {
-      font: $normal 3.6rem/4.4rem $regular;
+      font: $normal 3.2rem/4.4rem $regular;
     }
-    font: $normal 2.4rem/3.4rem $regular;
+    font: $normal 2.2rem/3.4rem $regular;
+  }
+  h3, h4 {
+    display: inline-block;
+    font: $normal 3.6rem/4.4rem $headline;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 25px;
+    &:after {
+      background: url('../img/heading_underline.svg') 0 0 no-repeat;
+      content: "";
+      height: 10px;
+      width: 100%;
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+    }
   }
 }
 

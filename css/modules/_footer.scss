@@ -28,6 +28,10 @@
   }
   article {
     position: relative;
+    margin-bottom: $padding-half;
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 0;
+    }
     &.slick-slide {
       padding: 0 !important;
       
@@ -216,10 +220,10 @@ footer {
   &.accreditations {
     text-align: center;
     overflow: hidden;
-    background: url('../img/rough_border_black.svg') left top -12px no-repeat;
+    background: $white url('../img/rough_border_black.svg') left top -12px no-repeat;
     background-size: auto;
     @media (min-width: $breakpoint-desktop) {
-      background: url('../img/rough_border_black.svg') left top -20px no-repeat;
+      background: $white url('../img/rough_border_black.svg') left top -20px no-repeat;
       background-size: contain;
     }
     background-size: contain;
