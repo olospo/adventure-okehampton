@@ -10,7 +10,7 @@ get_header(); ?>
         </div>
       </div>
       <div class="main_content">
-        <div class="twelve columns">
+        <div class="ten columns offset-by-one">
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           <?php get_template_part( 'inc/post' ); ?>
         <?php endwhile; ?>

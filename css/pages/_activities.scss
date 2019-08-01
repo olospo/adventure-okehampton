@@ -80,9 +80,15 @@
       padding-bottom: $padding;
       p {
         &:first-child {
-          font: $bold 3.6rem/4.4rem $regular;
+          font: $bold 2.2rem/3.4rem $regular;
+          @media (min-width: $breakpoint-tablet) {
+            font: $bold 3.6rem/4.4rem $regular;
+          }
         }
-        font: $normal 2.4rem/3.4rem $regular;
+        font: $normal 1.8rem/2.6rem $regular;
+        @media (min-width: $breakpoint-tablet) {
+          font: $normal 2.4rem/3.4rem $regular;
+        }
       }
     }
   }
@@ -143,15 +149,28 @@
   margin-bottom: $padding-half;
   background: $white;
   color: $red;
+  margin-top: $padding-half;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 0; 
+  }
   .content {
-    padding: 40px;
+    padding: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: 40px;
+    }
     h2 {
       color: $red;
-      font: $normal 4.6rem/5rem $headline;
+      font: $normal 3.8rem/4rem $headline;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 4.6rem/5rem $headline;
+      }
       text-transform: uppercase;
     }
     ul {
-      font: $normal 2.6rem/3.6rem $regular;
+      font: $normal 2.0rem/3.0rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 2.6rem/3.6rem $regular;
+      }
     }
   }
   
@@ -161,9 +180,15 @@
   margin-bottom: $padding-half;
   p {
     &:first-child {
-      font: $normal 3.2rem/4.4rem $regular;
+      font: $normal 2.2rem/3.4rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 2.8rem/3.8rem $regular;
+      }
     }
-    font: $normal 2.2rem/3.4rem $regular;
+    font: $normal 1.8rem/2.8rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 2.2rem/3.4rem $regular;
+      }
   }
   h3, h4 {
     display: inline-block;

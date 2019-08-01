@@ -253,7 +253,10 @@ aside {
           padding: 10px 40px 10px 0px;
           margin: 0 30px;
           border-bottom: 1px solid $white;
-          font: $normal 2.4rem/3.6rem $regular;
+          font: $normal 1.8rem/2.6rem $regular;
+          @media (min-width: $breakpoint-tablet) {
+            font: $normal 2.4rem/3.6rem $regular;
+          }
           background: url('../img/white_arrow_icon.svg') center right no-repeat;
         }
         &.current, &.current_page_item, &.current_page_parent, &:hover {
@@ -262,7 +265,10 @@ aside {
             margin: 0 30px;
             padding: 10px 40px 10px 0px;
             border-bottom: 1px solid transparent;
-            font: $bold 2.4rem/3.6rem $regular;
+            font: $bold 1.8rem/2.6rem $regular;
+            @media (min-width: $breakpoint-tablet) {
+              font: $bold 2.4rem/3.6rem $regular;
+            }
           }
         }
         &.current_page_item, &.current_page_parent {

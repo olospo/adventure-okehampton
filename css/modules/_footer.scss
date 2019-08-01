@@ -7,8 +7,8 @@
     background-size: contain;
   }
   .container {
-    padding: $padding 0;
-    margin-top: $padding;
+    padding: 60px 0;
+    margin-top: 60px;
     border-top: 2px dashed $black;
   }
   @media (min-width: $breakpoint-tablet) {
@@ -190,22 +190,38 @@ footer {
         padding-bottom: 10px;
       }
     }
+    .follow {
+      margin-top: 40px;
+      @media (min-width: $breakpoint-tablet) {
+        margin-top: 0px;
+      }
+    }
     .copyright-links {
       text-align: center;
-      font: $normal 1.4rem/2.0rem $regular;
+      font: $normal 1.2rem/2.0rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 1.4rem/2.0rem $regular;
+      }
       border-top: 1px dashed $white;
       margin-top: $padding;
       padding-top: $padding-half;
       .menu-extra-footer-container {
-        display: inline-block;
+        display: block;
+        @media (min-width: $breakpoint-tablet) {
+          display: inline-block;
+        }
       }
       ul {
         margin: 10px 0px;
         li {
-          display: inline-block;
-          border-right: 1px solid $white;
-          margin-right: 20px;
-          padding-right: 20px;
+          display: block;
+          border-right: none;
+          @media (min-width: $breakpoint-tablet) {
+            display: inline-block;
+            border-right: 1px solid $white;
+            margin-right: 20px;
+            padding-right: 20px;
+          }
           a {
             padding: 0;
             color: #655f6f;
