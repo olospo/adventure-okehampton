@@ -249,6 +249,7 @@ aside {
         margin: 0;
         list-style: none;
         a {
+          position: relative;
           display: block;
           padding: 10px 40px 10px 0px;
           margin: 0 30px;
@@ -257,7 +258,15 @@ aside {
           @media (min-width: $breakpoint-tablet) {
             font: $normal 2.4rem/3.6rem $regular;
           }
-          background: url('../img/white_arrow_icon.svg') center right no-repeat;
+          &:after {
+            background: url('../img/white_arrow_icon.svg') center right no-repeat;
+            content: "";
+            height: 34px;
+            width: 34px;
+            position: absolute;
+            margin: auto 0;
+            top: 0; bottom: 0; right: 0;
+          }
         }
         &.current, &.current_page_item, &.current_page_parent, &:hover {
           background: $red;
@@ -274,6 +283,30 @@ aside {
         &.current_page_item, &.current_page_parent {
           a {
             border-bottom: 1px solid $white;
+            
+          }
+        }
+        &.hasChildren.current_page_item, .current_page_parent {
+          a {
+            &:after {
+              background: url('../img/white_arrow_icon.svg') center right no-repeat;
+              content: "";
+              height: 34px;
+              width: 34px;
+              position: absolute;
+              margin: auto 0;
+              top: 0; bottom: 0; right: 0;
+              -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+            }
+          }
+          li {
+            a {
+              &:after {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+              }
+            }
           }
         }
       }
@@ -288,6 +321,15 @@ aside {
           a {
             font: $normal 2.4rem/3.6rem $regular;
             border-bottom: 1px solid $white;
+            &:after {
+              background: url('../img/white_arrow_icon.svg') center right no-repeat;
+              content: "";
+              height: 34px;
+              width: 34px;
+              position: absolute;
+              margin: auto 0;
+              top: 0; bottom: 0; right: 0;
+            }
           }
           &.current_page_item, &:hover {
             a {

@@ -497,10 +497,8 @@ class childNav extends Walker_page {
         $css_class = array('page_item');
         if(!empty($current_page)) {
             $_current_page = get_page( $current_page );
-            $children = get_children('post_type=page&post_status=publish&post_parent='.$page->ID);
+            $children = get_children('post_parent='.$page->ID);
             if(count($children) != 0) {
-                // this is where you add your custom CSS class,
-                // change it to whatever you like.
                 $css_class[] = 'hasChildren';
             }
             if(isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors))
