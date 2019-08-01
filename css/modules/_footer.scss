@@ -1,5 +1,11 @@
 // Footer
 .quick-links {
+  background: url('../img/rough_border_red.svg') left bottom -12px no-repeat;
+  background-size: auto;
+  @media (min-width: $breakpoint-desktop) {
+    background: url('../img/rough_border_red.svg') left bottom -18px no-repeat;
+    background-size: contain;
+  }
   .container {
     padding: $padding 0;
     margin-top: $padding;
@@ -116,8 +122,13 @@
 }
 
 .newsletter {
-  padding: $padding 0;
-  background: $green;
+  padding: $padding 0 180px 0;
+  background: url('../img/hills_bg.png') left bottom -1px no-repeat, url('../img/rough_border_red.svg') left top -12px no-repeat, $green;
+  background-size: contain;
+  @media (min-width: $breakpoint-desktop) {
+    background: url('../img/hills_bg.png') left bottom -1px no-repeat, url('../img/rough_border_red.svg') left top -20px no-repeat, $green;
+    background-size: contain;
+  }
   text-align: center;
   h3 {
     color: $white;
@@ -205,7 +216,13 @@ footer {
   &.accreditations {
     text-align: center;
     overflow: hidden;
-    background: $white;
+    background: url('../img/rough_border_black.svg') left top -12px no-repeat;
+    background-size: auto;
+    @media (min-width: $breakpoint-desktop) {
+      background: url('../img/rough_border_black.svg') left top -20px no-repeat;
+      background-size: contain;
+    }
+    background-size: contain;
     padding: $padding-half 0px;
     .accreditation {
       

@@ -70,6 +70,16 @@
   }
 }
 
+.quick_links {
+  padding: $padding 0px !important;
+  background: url('../img/rough_border_green.svg') center bottom -14px no-repeat;
+  background-size: auto;
+  @media (min-width: $breakpoint-desktop) {
+    background: url('../img/rough_border_green.svg') center bottom -17px no-repeat;
+    background-size: contain;
+  }
+}
+
 .testimonial {
   text-align: center;
   background: $green;
@@ -112,6 +122,12 @@
   text-align: center;
   padding: $padding 0 0 0;
   color: $red;
+  background: url('../img/rough_border_green.svg') center top -14px no-repeat;
+  background-size: auto;
+  @media (min-width: $breakpoint-desktop) {
+    background: url('../img/rough_border_green.svg') center top -20px no-repeat;
+    background-size: contain;
+  }
   h2 {
     color: $red;
     font: $normal 5.2rem/5.6rem $headline;

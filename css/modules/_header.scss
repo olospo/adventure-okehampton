@@ -46,21 +46,21 @@ header {
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $white;
           border-bottom: 5px solid $white;
-          margin: 28px 10px;
+          margin: 28px 5px;
           padding: 15px 5px;
         }
         &.menu-item-has-children a {
           background: url('../img/dropdown_icon.svg') center right no-repeat;
-          padding: 15px 30px 15px 5px;
+          padding: 15px 22px 15px 5px;
         }
         a {
-          font: $normal 2.0rem/3rem $headline;
+          font: $normal 2.25rem/3.2rem $headline;
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
           color: $white;
           text-decoration: none;
-          margin: 28px 10px;
+          margin: 28px 5px;
           padding: 15px 5px;
           border-bottom: 5px solid transparent;
           
