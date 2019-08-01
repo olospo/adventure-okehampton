@@ -59,8 +59,8 @@ while ( have_posts() ) : the_post(); ?>
     <div class="container">
       <div class="content eight columns offset-by-two">
       <h1><?php echo $title; ?></h1>
-      <script bt='Individual Booking' og='4cea9403-4c1a-4bfe-9387-255f61e242fe' fs='https://booking.bookinghound.com/fe/' id='tngbh-script-196155256' type='text/javascript' src='https://booking.bookinghound.com/fe/scripts/bh-popup.js' uniqueId='' mode=''></script>
-      <a href="<?php echo get_site_url(); ?>/group-booking" class="button">Group Enquiry</a>
+      <?php echo $link = the_field('individual_button_code','options'); ?>
+      <a href="<?php echo the_field('group_button_link','options'); ?>" class="button">Group Enquiry</a>
       </div>
     </div>
   </div>
