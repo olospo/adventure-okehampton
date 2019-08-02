@@ -52,4 +52,15 @@ $bgimage = get_field('families_background_image','options');
   </div>
 </section>
 
+<section class="contact_cta">
+  <div class="container">
+    <div class="seven columns offset-by-one">
+      Don’t see what you’re looking for? Make an enquiry to find out about other services we can offer
+    </div>
+    <div class="three columns">
+      <a href="<?php echo get_site_url(); ?>/contact" class="button white">Get in touch</a>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>

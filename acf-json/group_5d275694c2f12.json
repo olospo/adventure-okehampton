@@ -94,6 +94,13 @@
                 "operator": "==",
                 "value": "families"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -104,5 +111,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564579944
+    "modified": 1564756034
 }

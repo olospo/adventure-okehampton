@@ -1,13 +1,17 @@
 <?php /* Single Post */
 get_header();
 
+// Vars
+$title = get_field('title');
+$background = get_field('background_image');
+
 while ( have_posts() ) : the_post(); ?>
 
-<section class="article hero <?php echo $color; ?>" style="background: url(' <?php the_post_thumbnail_url( 'background-img' ); ?> ') center center no-repeat; background-size: cover;"> 
+<section class="article hero hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;"> 
   <div class="float">
     <div class="container">
       <div class="content six columns offset-by-three">
-        <h1><?php the_title(); ?></h1>
+        <h1><?php echo $title; ?></h1>
         <p><?php the_time('d/m/y'); ?></p>
       </div>
     </div>

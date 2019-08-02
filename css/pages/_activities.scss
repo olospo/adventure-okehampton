@@ -94,11 +94,26 @@
   }
 }
 
+.archive_listing {
+  background: url('../img/rough_border_green.svg') center bottom -14px no-repeat;
+}
+
+body.post-type-archive {
+  .quick-links {
+    padding-top: 60px;
+    background: url('../img/rough_border_green.svg') center top -14px no-repeat;
+    container {
+      padding-top: 0px;
+    }
+  }
+}
+
 .contact_cta {
   background: $green;
   color: $white;
   padding: $padding 0;
   font: $normal 2.8rem/3.8rem $regular;
+  overflow: visible;
 }
 
 // Activity Single
@@ -167,10 +182,12 @@
       text-transform: uppercase;
     }
     ul {
+      margin-bottom: 0;
       font: $normal 2.0rem/3.0rem $regular;
       @media (min-width: $breakpoint-tablet) {
         font: $normal 2.6rem/3.6rem $regular;
       }
+      
     }
   }
   
@@ -180,15 +197,15 @@
   margin-bottom: $padding-half;
   p {
     &:first-child {
-      font: $normal 2.2rem/3.4rem $regular;
+      font: $normal 2.0rem/3.2rem $regular;
       @media (min-width: $breakpoint-tablet) {
-        font: $normal 2.8rem/3.8rem $regular;
+        font: $normal 2.6rem/3.6rem $regular;
       }
     }
-    font: $normal 1.8rem/2.8rem $regular;
-      @media (min-width: $breakpoint-tablet) {
-        font: $normal 2.2rem/3.4rem $regular;
-      }
+    font: $normal 1.6rem/2.6rem $regular;
+    @media (min-width: $breakpoint-tablet) {
+      font: $normal 1.8rem/2.8rem $regular;
+    }
   }
   h3, h4 {
     display: inline-block;
