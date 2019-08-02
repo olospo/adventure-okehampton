@@ -240,7 +240,7 @@
                                     "key": "field_5d289a1eebeee",
                                     "label": "Slider",
                                     "name": "slider",
-                                    "type": "text",
+                                    "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -249,11 +249,32 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "block",
+                                    "button_label": "Add Slide",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5d4420cbc75d0",
+                                            "label": "Slider Image",
+                                            "name": "slider_image",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ]
                                 }
                             ],
                             "min": "",
@@ -594,5 +615,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563983558
+    "modified": 1564745966
 }

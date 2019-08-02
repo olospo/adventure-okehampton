@@ -1,14 +1,17 @@
 <?php /* Category */
 get_header(); ?>
 
-<section class="news">
-  <div class="title">
-    <div class="container">
-      <div class="twelve columns">
+<section class="hero small">
+  <div class="container">
+    <div class="twelve columns">
+      <div class="content">
         <h1><?php single_cat_title(); ?></h1>
       </div>
     </div>
   </div>
+</section>
+
+<section class="news">
   <div class="container">
     <div class="twelve columns">
       <div class="content">

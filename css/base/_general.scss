@@ -85,7 +85,7 @@ h4 {
 
 // Page 
 section {
-  &.page, &.post {
+  &.page, &.post, &.search {
     padding: $padding 0px;
     font: $normal 2rem/3.6rem $regular;
     font-size: 2rem;

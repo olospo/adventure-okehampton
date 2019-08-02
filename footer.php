@@ -127,17 +127,26 @@
 
 <footer class="links">
   <div class="container">
-    <div class="about two columns">
-      About Us
+    <div class="about three columns">
+      <img src="<?php bloginfo('template_directory'); ?>/img/logo_full.png" />
+      <ul class="social-icons">
+        <li><a href="<?php the_field('facebook_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/facebook_icon.svg" /></a></li>
+        <li><a href="<?php the_field('twitter_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/twitter_icon.svg" /></a></li>
+        <li><a href="<?php the_field('instagram_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/instagram_icon.svg" /></a></li>
+        <li><a href="<?php the_field('linkedin_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/linkedin_icon.svg" /></a></li>
+        <li><a href="<?php the_field('tripadvisor_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/tripadvisor_icon.svg" /></a></li>
+      </ul>
+      <?php get_search_form(); ?>
       <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
     </div>
-    <div class="follow five columns">
+    <div class="follow four-half columns">
       <h4>Follow us</h4>
       <?php echo do_shortcode('[custom-twitter-feeds]'); ?>
     </div>
-    <div class="find five columns">
+    <div class="find four-half columns">
       <h4>How to find us</h4>
-      <p>Map and instructions here</p>
+      <img src="<?php bloginfo('template_directory'); ?>/img/map.jpg" />
+      <?php echo the_field('map_text','options'); ?>
     </div>
     <div class="copyright-links twelve columns ">
       <?php wp_nav_menu( array( 'theme_location' => 'extra_footer' ) ); ?> &copy; <?php the_time('Y'); ?> Adventure Okehampton all rights reserved

@@ -13,6 +13,16 @@ section.hero{
   @media (min-width: $breakpoint-desktop) {
     margin-top: 111px;
   }
+  &.small {
+    background: $black;
+    padding: $padding 0px;
+    .content {
+      h1 {
+        color: $white;
+        margin-bottom: 0;
+      }
+    }
+  }
   .content {
     h1 {
       text-align: center;
