@@ -521,7 +521,7 @@ class childNav extends Walker_page {
 
 // Add CPT to Search
 
-add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
+add_filter( 'pre_get_posts', 'cpt_search' );
 /**
  * This function modifies the main WordPress query to include an array of 
  * post types instead of the default 'post' post type.
