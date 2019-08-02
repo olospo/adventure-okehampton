@@ -86,10 +86,22 @@ $group = get_field('group_bookings');
               
                     the_sub_field('content');
               
-                    elseif( get_row_layout() == 'slider' ): 
-              
-                    the_sub_field('slider');
-              
+                  elseif( get_row_layout() == 'image' ):
+                    
+                    // display a sub field value
+                    $image = get_sub_field('image'); 
+                        
+                    // thumbnail
+                    $size = 'featured-img';
+                    $thumb = $image['sizes'][ $size ];
+                    $width = $image['sizes'][ $size . '-width' ];
+                    $height = $image['sizes'][ $size . '-height' ];
+                    ?>
+                            
+                    <img src="<?php echo $thumb; ?>" />
+                        
+                  <?php
+
                     endif;
               
                 endwhile;
