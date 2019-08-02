@@ -145,7 +145,7 @@
     </div>
     <div class="find four-half columns">
       <h4>How to find us</h4>
-      <img src="<?php bloginfo('template_directory'); ?>/img/map.jpg" />
+      <img src="<?php bloginfo('template_directory'); ?>/img/map.png" />
       <?php echo the_field('map_text','options'); ?>
     </div>
     <div class="copyright-links twelve columns ">

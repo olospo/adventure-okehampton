@@ -241,6 +241,10 @@ footer {
       @media (min-width: $breakpoint-tablet) {
         margin-top: 0px;
       }
+      p {
+        font: $normal 2.4rem/3.2rem $regular;
+        color: #dddbdf;
+      }
     }
     .find {
       img {
@@ -250,6 +254,13 @@ footer {
     // Twitter 
     #ctf .ctf-item {
       padding: 0px 0px !important;
+      .ctf-tweet-actions {
+        margin: 10px 0px;
+        .fa, span {
+          color: $white;
+          font-size: 3.0rem;
+        }
+      }  
     }
     .copyright-links {
       text-align: center;

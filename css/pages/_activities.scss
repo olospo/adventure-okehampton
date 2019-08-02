@@ -208,10 +208,6 @@
   }
 }
 
-.accordionItem {
-  
-}
-
 .open .accordionItemHeading {
   border-bottom: none;
 }
@@ -237,6 +233,8 @@
     position: absolute;
   }
 }
+
+
 
 .open .accordionItemHeading {
   position: relative;
@@ -310,6 +308,9 @@
 	-ms-transition: -ms-transform 0.5s ease;
 	transition: transform 0.5s ease;
   box-sizing: border-box;
+  img {
+    margin-bottom: 30px;
+  }
 }
 
 

@@ -89,9 +89,24 @@ $group = get_field('group_bookings');
               
                     the_sub_field('content');
               
-                    elseif( get_row_layout() == 'slider' ): 
-              
-                    the_sub_field('slider');
+                    elseif( get_row_layout() == 'slider' ):
+                    
+                      // check if the repeater field has rows of data
+                      if( have_rows('slider') ):
+                      
+                       	// loop through the rows of data
+                          while ( have_rows('slider') ) : the_row();
+                      
+                              // display a sub field value
+                              $slider = get_sub_field('slider_image');
+                              
+                              echo $slider['url'];
+                      
+                          endwhile;
+                      
+                      else :
+                      // no rows found
+                      endif; 
               
                     endif;
               

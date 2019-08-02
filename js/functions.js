@@ -112,6 +112,16 @@ $('.activity-slider').slick({
   ]
 });
 
+$('.accordion-slide').slick({
+  autoplay:true,
+  dots: true,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 700,
+  slidesToShow: 2,
+  slidesToScroll: 2
+});
+
 $('.activity-scroll').slick({
   autoplay:true,
   dots: false,
