@@ -10,7 +10,7 @@ $bgimage = get_field('activities_background_image','options');
 <section class="activity hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(<?php echo $bgimage['url']; ?>) center center no-repeat; background-size: cover;">
   <div class="float">
     <div class="container">
-      <div class="content six columns offset-by-three">
+      <div class="content eight columns offset-by-two">
         <h1><?php echo $title; ?></h1>
       </div>
     </div>

@@ -15,7 +15,7 @@ $group = get_field('group_bookings');
 <section class="activity hero" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $background['url']; ?> ') center center no-repeat; background-size: cover;">
   <div class="float">
     <div class="container">
-      <div class="content six columns offset-by-three">
+      <div class="content eight columns offset-by-two">
         <h1><?php the_title(); ?></h1>
         <?php if ($individual) { ?><?php echo $link = the_field('individual_button_code','options'); ?><?php } if ($group) { ?><a href="<?php echo the_field('group_button_link','options'); ?>" class="button">Group Enquiry</a><?php } ?>
       </div>
