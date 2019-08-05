@@ -15,10 +15,10 @@
     padding-top: 100% !important;
     @media (min-width: $breakpoint-tablet) {
       @include aspect-ratio(2,1);
-      padding-top: 40% !important;
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        padding-top: 50%; // Fix video sizing issue in IE
-      }
+      padding-top: 35% !important;
+    }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      padding-top: 50%; // Fix video sizing issue in IE
     }
     
     video {
