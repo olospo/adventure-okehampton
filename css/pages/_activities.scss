@@ -409,6 +409,9 @@ body.post-type-archive, body.page-template-page-parent {
         text-decoration: underline;
         border-bottom: none;
         padding-left: 35px;
+        &:hover {
+          color: $black;
+        }
       }
       &.link {
         a {

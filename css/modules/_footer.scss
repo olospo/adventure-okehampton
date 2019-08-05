@@ -115,7 +115,7 @@
     }
     .cff-page-name {
       font: $bold 1.8rem/2.2rem $regular !important;
-      text-decoration: underline;
+      text-decoration: none;
     }
     .cff-date {
       color: $white !important;
@@ -123,6 +123,16 @@
     }
     .cff-author img {
       border-radius: 0 !important;
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+      border-bottom: 1px solid $white;
+      &:hover {
+        color: $black;
+        text-decoration: none;
+        border-bottom: 1px solid $black;
+      }
     }
   }
 }
@@ -211,6 +221,9 @@ footer {
     }
     a {
       color: #8e8996;
+      &:hover {
+        color: $white;
+      }
     }
     .about {
       img {
@@ -291,6 +304,9 @@ footer {
           a {
             padding: 0;
             color: #8e8996;
+            &:hover {
+              color: $white;
+            }
           }
           &:last-child {
             border-right: none;
@@ -316,7 +332,7 @@ footer {
       margin: 0px auto;
       img {
         margin: 10px;
-        max-height: 100px;
+        max-height: 75px;
         width: auto;
       }
     }

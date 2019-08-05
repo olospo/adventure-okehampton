@@ -28,6 +28,7 @@
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   &:hover {
+    color: $white;
     text-decoration: none;
     border: none;
     -webkit-animation-name: hvr-pop;
@@ -42,13 +43,17 @@
   &.white {
     background: $white;
     color: $red;
+    &:hover {
+      background: $white;
+      color: $red;
+    }
   }
   &.red {
     background: $red;
     color: $white;
     &:hover {
-      background: $white;
-      color: $red;
+      background: $red;
+      color: $white;
     }
   }
 }
@@ -56,9 +61,17 @@
 .tngbh-btn {
   @extend .button;
   @extend .white;
+  &:hover {
+    background: $white;
+    color: $red;
+  }
 }
 .individual-booking > .content > .tngbh-btn {
   @extend .button;
   @extend .red;
+  &:hover {
+    background: $red;
+    color: $white;
+  }
 }
 
