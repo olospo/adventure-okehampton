@@ -230,6 +230,7 @@ section {
   }
 }
 
+// Aside
 aside {
   background: $green;
   color: $white;
@@ -343,6 +344,69 @@ aside {
   }
 }
 
+// Hero
+.overlay {
+  background: #000;
+}
+section.hero{
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  padding: 160px 0px;
+  overflow: hidden;
+  margin-top: 80px;
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: 111px;
+  }
+  &.small {
+    background: $black;
+    padding: $padding 0px;
+    .content {
+      h1 {
+        color: $white;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .content {
+    h1 {
+      text-align: center;
+      font: $normal 3.2rem/4.2rem $headline;
+      font-size: 3.2rem;
+      line-height: 3.2rem;
+      color: $white;
+      margin-bottom: 10px;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 4.2rem/5.2rem $headline;
+        font-size: 4.2rem;
+        line-height: 5.2rem;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        font: $normal 9.0rem/9rem $headline;
+        font-size: 9.0rem;
+        line-height: 9rem;
+        margin-bottom: 40px;
+      }
+    }
+    p {
+      text-align: center;
+      font: $normal 2rem/3rem $regular;
+      font-size: 2rem;
+      line-height: 3rem;
+      color: $white;
+      @media (max-width: $breakpoint-tablet) {
+        font: $normal 1.8rem/3rem $regular;
+      }
+    }
+  }
+  &.not_found {
+    background: $black;
+    text-align: center;
+  }  
+}
+
+// Form
 form {
   text-align: center;
   select {

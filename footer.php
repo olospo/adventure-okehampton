@@ -149,7 +149,7 @@
       <?php echo the_field('map_text','options'); ?>
     </div>
     <div class="copyright-links twelve columns ">
-      <?php wp_nav_menu( array( 'theme_location' => 'extra_footer' ) ); ?> &copy; <?php the_time('Y'); ?> Adventure Okehampton all rights reserved
+      Part of the English National Park Experience Collection <?php wp_nav_menu( array( 'theme_location' => 'extra_footer' ) ); ?> &copy; <?php the_time('Y'); ?> Adventure Okehampton all rights reserved
       <ul class="contact_details"><li><?php the_field('address','options'); ?></li><li>E: <a href="mailto:<?php the_field('email','options'); ?>"><?php the_field('email','options'); ?></a></li><li>T: <a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a></li></ul>
     </div>
   </div>

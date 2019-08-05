@@ -42,8 +42,7 @@ if (has_post_thumbnail( $post_id ) ):
 <meta name="Keywords" content="okehampton, Devon, adventure, activity, groups, bookings, activities, YHA, youth hostel, accommodation, Dartmoor, explore, exploring, explorers, schools, camp, youth groups, adult groups, international, residential, NCS, team building, leadership skills, stag, hen, stag and hen, ten tors, scouts, guides, scouts and guides, tours, schools and colleges, Duke of Edinburgh, sports teams, cadets, boys brigade, archery, abseil, bushcraft, canoeing, climbing, cycling, gorge scrambling, guided walks, high ropes, kayaking, low ropes, moorland expedition, moorland, mountain biking, mountain boarding, navigation, orienteering, pony trekking, raft building, team building, tyrolean traverse, weaselling">
 <meta name="description" content="Get ready for your next adventure">
 </head>
-<?php $color = get_field('page_colour_scheme'); ?>
-<body <?php body_class($color); ?>>
+<body <?php body_class(); ?>>
 <div class="fixed_header">
 <header>
   <div class="container"> 
@@ -55,7 +54,6 @@ if (has_post_thumbnail( $post_id ) ):
       <?php if ( is_front_page() ) { echo '</h1>'; } else { echo '</p>'; } ?>
     </div>
     <!-- Mobile Menu Trigger -->
-    <!-- <div class="mobile_menu"></div> -->
     <a href="#" class="menu-toggle mobile_menu" aria-controls="primary-menu">
       <span></span>
       <span></span>

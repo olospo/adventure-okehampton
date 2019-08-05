@@ -32,8 +32,5 @@ get_header(); ?>
   </div>
 </section>
 
-<?php get_template_part( 'inc/components' ); ?>
-
 <?php endwhile; // end of the loop. ?>
-
 <?php get_footer(); ?>

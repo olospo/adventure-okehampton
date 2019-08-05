@@ -21,7 +21,6 @@ add_action( 'after_setup_theme', 'theme_setup' );
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
   wp_enqueue_style( 'main', get_stylesheet_directory_uri().'/css/main.css', false, '1.0' );
-  wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Noto+Serif:400,700|Sanchez', false, '1.0');
 }
 
 // Enqueue scripts
@@ -177,142 +176,6 @@ function fix_category_pagination($qs){
 	return $qs;
 }
 add_filter('request', 'fix_category_pagination');
-
-// Breadcrumbs
-function breadcrumbs() {
- 
-  /* === OPTIONS === */
-  $text['home']     = 'Home'; // text for the 'Home' link
-  $text['category'] = '%s'; // text for a category page
-  $text['search']   = 'Search Results for "%s"'; // text for a search results page
-  $text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
-  $text['author']   = 'Articles Posted by %s'; // text for an author page
-  $text['404']      = 'Error 404'; // text for the 404 page
- 
-  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter   = '&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;'; // delimiter between crumbs
-  $before      = '<span class="current">'; // tag before the current crumb
-  $after       = '</span>'; // tag after the current crumb
-  /* === END OF OPTIONS === */
- 
-  global $post;
-  $homeLink = get_bloginfo('url') . '/';
-  $linkBefore = '<span typeof="v:Breadcrumb">';
-  $linkAfter = '</span>';
-  $linkAttr = ' rel="v:url" property="v:title"';
-  $link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
- 
-  if (is_home() || is_front_page()) {
- 
-    if ($showOnHome == 1) echo '<a href="' . $homeLink . '">' . $text['home'] . '</a>';
- 
-  } else {
- 
-    echo '<div id="crumbs" xmlns:v="http://rdf.data-vocabulary.org/#">' . sprintf($link, $homeLink, $text['home']) . $delimiter;
- 
-    if ( is_category() ) {
-      $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) {
-        $cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
-        $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-        $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-        echo $cats;
-      }
-      echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
-      
- 
-    } elseif ( is_search() ) {
-      echo $before . sprintf($text['search'], get_search_query()) . $after;
- 
-    } elseif ( is_day() ) {
-		//echo sprintf($link, '/category/news' , 'News') . $delimiter;	
-      echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
-      echo sprintf($link, get_month_link(get_the_time('Y'),get_the_time('m')), get_the_time('F')) . $delimiter;
-      echo $before . get_the_time('d') . $after;
- 
-    } elseif ( is_month() ) {
-		//echo sprintf($link, '/category/news' , 'News') . $delimiter;	
-      echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
-      echo $before . get_the_time('F') . $after;
- 
-    } elseif ( is_year() ) {
-	 // echo sprintf($link, '/category/news' , 'News') . $delimiter;	
-      echo $before . get_the_time('Y') . $after;
- 
-    } elseif ( is_single() && !is_attachment() ) {
-      if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-		
-        $slug = $post_type->rewrite;
-        echo sprintf($link, $homeLink . 'work' , 'Showcase');
-        // printf($link, $homeLink . '/' . $slug['slug'] . '/', 'Showcase', 'work');
-        if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
-      } 
-      else {
-        echo sprintf($link, $homeLink . 'news' , 'News') . $delimiter;
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, $delimiter);
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
-        $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-        $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-        // echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
-      }
- 
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      
-	   
-    } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      $cats = get_category_parents($cat, TRUE, $delimiter);
-      $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-      $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-      echo $cats;
-      printf($link, get_permalink($parent), $parent->post_title);
-      if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo $delimiter;
-      }
-      if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
- 
-    } elseif ( is_tag() ) {
-      echo $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
- 
-    } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo $before . sprintf($text['author'], $userdata->display_name) . $after;
- 
-    } elseif ( is_404() ) {
-      echo $before . $text['404'] . $after;
-    }
- 
-    if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-    }
- 
-    echo '</div>';
- 
-  }
-}
 
 // Remove Menu Items 
 function remove_menus(){
@@ -476,47 +339,47 @@ add_action( 'init', 'custom_post_type', 0 );
 
 add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2);
 function current_type_nav_class($classes, $item) {
-    // Get post_type for this post
-    $post_type = get_query_var('post_type');
+  // Get post_type for this post
+  $post_type = get_query_var('post_type');
 
-    // Go to Menus and add a menu class named: {custom-post-type}-menu-item
-    // This adds a 'current_page_parent' class to the parent menu item
-    if( in_array( $post_type.'-menu-item', $classes ) )
-        array_push($classes, 'current_page_parent');
+  // Go to Menus and add a menu class named: {custom-post-type}-menu-item
+  // This adds a 'current_page_parent' class to the parent menu item
+  if( in_array( $post_type.'-menu-item', $classes ) )
+      array_push($classes, 'current_page_parent');
 
-    return $classes;
+  return $classes;
 }
 
 class childNav extends Walker_page {
-    public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
-        if($depth)
-            $indent = str_repeat("\t", $depth);
-        else
-            $indent = '';
-        extract($args, EXTR_SKIP);
-        $css_class = array('page_item');
-        if(!empty($current_page)) {
-            $_current_page = get_page( $current_page );
-            $children = get_children('post_parent='.$page->ID);
-            if(count($children) != 0) {
-                $css_class[] = 'hasChildren';
-            }
-            if(isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors))
-                $css_class[] = 'current_page_ancestor';
-            if($page->ID == $current_page)
-                $css_class[] = 'current_page_item';
-            elseif($_current_page && $page->ID == $_current_page->post_parent)
-                $css_class[] = 'current_page_parent';
-        } elseif($page->ID == get_option('page_for_posts')) {
+  public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
+    if($depth)
+        $indent = str_repeat("\t", $depth);
+    else
+        $indent = '';
+    extract($args, EXTR_SKIP);
+    $css_class = array('page_item');
+    if(!empty($current_page)) {
+        $_current_page = get_page( $current_page );
+        $children = get_children('post_parent='.$page->ID);
+        if(count($children) != 0) {
+            $css_class[] = 'hasChildren';
+        }
+        if(isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors))
+            $css_class[] = 'current_page_ancestor';
+        if($page->ID == $current_page)
+            $css_class[] = 'current_page_item';
+        elseif($_current_page && $page->ID == $_current_page->post_parent)
             $css_class[] = 'current_page_parent';
-        }
-        $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
-        if($page->ID == $current_page) {
-            $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
-        } else {
-            $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
-        }
+    } elseif($page->ID == get_option('page_for_posts')) {
+        $css_class[] = 'current_page_parent';
     }
+    $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
+    if($page->ID == $current_page) {
+        $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
+    } else {
+        $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
+    }
+  }
 }
 
 // Add CPT to Search
@@ -530,13 +393,10 @@ add_filter( 'pre_get_posts', 'cpt_search' );
  * @return object $query The amended query.
  */
 function cpt_search( $query ) {
-	
-    if ( $query->is_search ) {
-      $query->set( 'post_type', array( 'post', 'activities', 'groups', 'adventure-days', 'families' ) );
-    }
-    
-    return $query;
-    
+  if ( $query->is_search ) {
+    $query->set( 'post_type', array( 'post', 'activities', 'groups', 'adventure-days', 'families' ) );
+  }
+  return $query;  
 }
 
 ?>

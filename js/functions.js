@@ -8,9 +8,6 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
   if (width > 768) {
     $('nav.mobile').hide();
   }
-  if (width < 768) {
-    $('.search_form').hide();
-  }
 });
 
 $('.quick.slide_one').slick({
