@@ -21,11 +21,13 @@ $bgimage = get_field('groups_background_image','options');
 <section class="post archive_listing">
   <div class="container">
     <div class="twelve columns">
+      <?php if($content) { ?>
       <div class="intro_content">
         <div class="content ten columns offset-by-one">
           <?php echo $content; ?>
         </div>
       </div>
+      <?php } ?>
       <div class="main_content">
         <div class="twelve columns">
           <?php 
