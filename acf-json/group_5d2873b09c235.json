@@ -324,6 +324,65 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5d494a659b6d4",
+            "label": "Add Custom Code",
+            "name": "add_custom_code",
+            "type": "true_false",
+            "instructions": "Should this page display custom button code. Leaving this unchecked will use the \"general\" button code specified in \"Theme Settings\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d2c4831df72d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Custom Button",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d494a569b6d3",
+            "label": "Custom Code",
+            "name": "custom_code",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d2c4831df72d",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5d494a659b6d4",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5d2c4848df72e",
             "label": "Group Bookings",
             "name": "group_bookings",
@@ -599,5 +658,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1564753697
+    "modified": 1565084617
 }

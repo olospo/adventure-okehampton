@@ -1,14 +1,18 @@
 <?php get_header(); /* Activity Post */
 
-// Vars
+// Hero
 $title = get_field('title');
 $background = get_field('background_image');
-
+// Content
 $glance = get_field('at_a_glance'); 
 $content = get_field('content');
-
+// Booking
 $individual = get_field('individual_bookings');
 $group = get_field('group_bookings');
+// Individual Button 
+$link = get_field('individual_button_code','options');
+$customLink = get_field('add_custom_code');
+$customCode = get_field('custom_code');
 
 ?>
 
@@ -17,7 +21,11 @@ $group = get_field('group_bookings');
     <div class="container">
       <div class="content eight columns offset-by-two">
         <h1><?php the_title(); ?></h1>
-        <?php if ($individual) { ?><?php echo $link = the_field('individual_button_code','options'); ?><?php } if ($group) { ?><a href="<?php echo the_field('group_button_link','options'); ?>" class="button">Group Enquiry</a><?php } ?>
+        <?php if ($individual) { ?>
+          <?php if($customLink) { echo $customCode; } else { echo $link; } ?>
+        <?php } if ($group) { ?>
+          <a href="<?php echo the_field('group_button_link','options'); ?>" class="button">Group Enquiry</a>
+        <?php } ?>
       </div>
     </div>
   </div>
