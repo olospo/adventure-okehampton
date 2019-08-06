@@ -51,8 +51,12 @@
                         "id": ""
                     },
                     "post_type": [
+                        "page",
                         "activities",
-                        "groups"
+                        "groups",
+                        "adventure-days",
+                        "families",
+                        "post"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
@@ -155,5 +159,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564580024
+    "modified": 1565082832
 }
