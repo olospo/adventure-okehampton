@@ -62,7 +62,10 @@ if (has_post_thumbnail( $post_id ) ):
     </a>
     <!-- Main Menu -->
     <nav class="primary ten columns">
-      <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+      <ul class="book">
+        <li><?php echo the_field('individual_button_code','options'); ?></li>
+      </ul>
+      <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
     </nav>
   </div>
 </header>

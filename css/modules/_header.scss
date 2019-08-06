@@ -83,6 +83,15 @@ header {
         }
       }
     }
+    ul.book {
+      float: right;
+      li {
+        margin: 28px 5px;
+        .tngbh-btn {
+          padding: 10px 20px;
+        }
+      }
+    }
     @media (min-width: $breakpoint-desktop) {
       display: block;
     } 
