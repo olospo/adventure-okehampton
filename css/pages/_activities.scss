@@ -39,6 +39,11 @@
       height: auto;
     }
     .overlay {
+      display: none;
+      @media (min-width: $breakpoint-tablet) {
+        display: block;
+      }
+      
       z-index: 1;
       position: absolute;
       top: 0;
