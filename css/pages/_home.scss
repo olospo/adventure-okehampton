@@ -189,7 +189,7 @@
   }
   .slick-prev, .slick-next {
     top: 45%;
-    
+    z-index: 2;
   }
   .slick-prev {
     left: -80px;
