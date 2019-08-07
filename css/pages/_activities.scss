@@ -175,10 +175,6 @@ body.post-type-archive, body.page-template-page-parent {
   margin-bottom: $padding-half;
   background: $white;
   color: $red;
-  margin-top: $padding-half;
-  @media (min-width: $breakpoint-tablet) {
-    margin-top: 0; 
-  }
   .content {
     padding: 20px;
     @media (min-width: $breakpoint-tablet) {

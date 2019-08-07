@@ -7,8 +7,12 @@
     background-size: contain;
   }
   .container {
-    padding: 60px 0;
-    margin-top: 60px;
+    padding: $padding-half 0 60px 0;
+    margin-top: 0px;
+    @media (min-width: $breakpoint-desktop) {
+      padding: 60px 0;
+      margin-top: 0px;
+    }
     border-top: 2px dashed $black;
   }
   @media (min-width: $breakpoint-tablet) {
@@ -22,9 +26,29 @@
       
     }
   }
+  .quick {
+    &.blue {
+      .slick-dots {
+        background: $blue;
+      }
+    }
+    &.red {
+      .slick-dots {
+        background: $red;
+      }
+    }
+    &.green {
+      .slick-dots {
+        background: $green;
+      }
+    }
+  }
   .slick-dots {
-    top: 200px;
-    height: 40px;
+    top: 0px;
+    height: 30px;
+    background: $red;
+    width: auto;
+    padding: 0px 10px 20px 10px;
   }
   article {
     position: relative;
@@ -88,7 +112,10 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     color: $white;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 60px;
+    }
   }
   h4 {
     font: $normal 3.4rem/4.0rem $headline;
@@ -138,12 +165,13 @@
 }
 
 .newsletter {
-  padding: $padding 0 180px 0;
+  padding: $padding 0;
   background: url('../img/hills_bg.png') left bottom -1px no-repeat, url('../img/rough_border_red.svg') left top -12px no-repeat, $green;
   background-size: contain;
   @media (min-width: $breakpoint-desktop) {
     background: url('../img/hills_bg.png') left bottom -1px no-repeat, url('../img/rough_border_red.svg') left top -20px no-repeat, $green;
     background-size: contain;
+    padding: $padding 0 180px 0;
   }
   text-align: center;
   h3 {
@@ -167,6 +195,7 @@
       max-width: 300px;
     }
     &.button {
+      -webkit-appearance: none;
       font: $normal 2.6rem/2.8rem $headline;
       display: inline-block;
       margin: 0;
@@ -200,7 +229,7 @@ footer {
           color: $white;
         }
         &.search {
-          width: 80%;
+          width: 88%;
           float: left;
         }
         &.search-submit {
@@ -211,6 +240,7 @@ footer {
           background: transparent url('../img/search_icon.svg') right center no-repeat;
           text-indent: -99999px;
           cursor: pointer;
+          -webkit-appearance: none;
         }
       }
       clear: both;
@@ -227,6 +257,12 @@ footer {
       }
     }
     .about {
+      @media (max-width: $breakpoint-mobile) {
+        text-align: center;
+        img {
+          margin: 0px auto 30px auto;
+        }
+      }
       img {
         max-width: 100%;
         margin-bottom: 30px;
@@ -261,6 +297,10 @@ footer {
       }
     }
     .find {
+      margin-top: $padding-half;
+      @media (min-width: $breakpoint-tablet) {
+        margin-top: 0px;
+      }
       img {
         margin-bottom: 20px;
       }
@@ -268,11 +308,14 @@ footer {
     // Twitter 
     #ctf .ctf-item {
       padding: 0px 0px !important;
+      .ctf-tweet-text {
+        font: $normal 1.8rem/2.8rem $regular;
+      }
       .ctf-tweet-actions {
         margin: 10px 0px;
         .fa, span {
           color: $white;
-          font-size: 3.0rem;
+          font-size: 2.4rem;
         }
       }  
     }
@@ -283,7 +326,10 @@ footer {
         font: $normal 1.4rem/2.0rem $regular;
       }
       border-top: 1px dashed $white;
-      margin-top: $padding;
+      @media (min-width: $breakpoint-tablet) {
+        margin-top: $padding;
+      }
+      margin-top: $padding-half;
       padding-top: $padding-half;
       .menu-extra-footer-container {
         display: block;
@@ -321,19 +367,24 @@ footer {
     overflow: hidden;
     background: $white url('../img/rough_border_black.svg') left top -12px no-repeat;
     background-size: auto;
+    padding: 20px 0px;
     @media (min-width: $breakpoint-desktop) {
+      padding: $padding-half 0px;
       background: $white url('../img/rough_border_black.svg') left top -20px no-repeat;
       background-size: contain;
     }
     background-size: contain;
-    padding: $padding-half 0px;
     .accreditation {
       
       display: inline-block;
       margin: 0px auto;
       img {
-        margin: 10px;
-        max-height: 75px;
+        margin: 5px;
+        max-height: 50px;
+        @media (min-width: $breakpoint-tablet) {
+          margin: 10px;
+          max-height: 75px;
+        }
         width: auto;
       }
     }
@@ -349,4 +400,7 @@ a.back_to_top {
 	right: 0px;
 	top: 75%;
 	background: $white url("../img/back_to_top_icon.svg") no-repeat center center;	
+	@media (max-width: $breakpoint-tablet) {
+  	display: none !important;
+  }
 }

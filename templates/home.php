@@ -113,7 +113,7 @@ while ( have_posts() ) : the_post(); ?>
   <div class="container">
     <div class="eight columns offset-by-two">
     <h2>Activities</h2>
-    <p>We have 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
+    <p>We have over 20 activities, ranging from archery to geocaching for you to create your own adventure!</p>
     </div>
     <div class="ten columns offset-by-one">
       <?php $current_post = $post->ID;        

@@ -2,7 +2,7 @@
 <section class="quick-links">
   <div class="container">
     <?php if( have_rows('quick_link_one','options') ): ?>
-    <div class="quick slide_one one-third column">
+    <div class="quick blue slide_one one-third column">
     	<?php while( have_rows('quick_link_one','options') ): the_row(); 
     		// vars
     		$imageOne = get_sub_field('image_one','options');
@@ -31,7 +31,7 @@
     <?php endif; wp_reset_postdata(); ?>
     
     <?php if( have_rows('quick_link_two','options') ): ?>
-    <div class="quick slide_two one-third column">
+    <div class="quick red slide_two one-third column">
     	<?php while( have_rows('quick_link_two','options') ): the_row(); 
     		// vars
     		$imageTwo = get_sub_field('image_two','options');
@@ -60,7 +60,7 @@
     <?php endif; wp_reset_postdata(); ?>
     
     <?php if( have_rows('quick_link_three','options') ): ?>
-    <div class="quick slide_three one-third column">
+    <div class="quick green slide_three one-third column">
     	<?php while( have_rows('quick_link_three','options') ): the_row(); 
     		// vars
     		$imageThree = get_sub_field('image_three','options');
@@ -98,7 +98,7 @@
         <?php echo do_shortcode('[instagram-feed]'); ?>
       </div>
       <div class="facebook six columns">
-        <h4>Facebook Feed</h4>
+        <h4>Facebook</h4>
         <div class="feed">
         <?php echo do_shortcode('[custom-facebook-feed]'); ?>
         </div>
@@ -145,7 +145,7 @@
     </div>
     <div class="find four-half columns">
       <h4>How to find us</h4>
-      <img src="<?php bloginfo('template_directory'); ?>/img/map.png" />
+      <a href="<?php echo the_field('map_link','options');?>"><img src="<?php bloginfo('template_directory'); ?>/img/map.png" /></a>
       <?php echo the_field('map_text','options'); ?>
     </div>
     <div class="copyright-links twelve columns ">

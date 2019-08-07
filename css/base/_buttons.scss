@@ -28,32 +28,44 @@
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   &:hover {
-    color: $white;
-    text-decoration: none;
     border: none;
-    -webkit-animation-name: hvr-pop;
-    animation-name: hvr-pop;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
+    color: $white;
+  }
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      text-decoration: none;
+      border: none;
+      -webkit-animation-name: hvr-pop;
+      animation-name: hvr-pop;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+    }
   }
   &.white {
     background: $white;
     color: $red;
     &:hover {
-      background: $white;
       color: $red;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      &:hover {
+        background: $white;
+        color: $red;
+      }
     }
   }
   &.red {
     background: $red;
     color: $white;
-    &:hover {
-      background: $red;
-      color: $white;
+    @media (min-width: $breakpoint-tablet) {
+      &:hover {
+        background: $red;
+        color: $white;
+      }
     }
   }
 }
@@ -62,16 +74,23 @@
   @extend .button;
   @extend .white;
   &:hover {
-    background: $white;
     color: $red;
+  }
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      background: $white;
+      color: $red;
+    }
   }
 }
 .individual-booking > .content > .tngbh-btn {
   @extend .button;
   @extend .red;
-  &:hover {
-    background: $red;
-    color: $white;
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      background: $red;
+      color: $white;
+    }
   }
 }
 

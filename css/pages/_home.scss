@@ -74,10 +74,11 @@
 }
 
 .quick_links {
-  padding: $padding 0px !important;
+  padding: $padding-half 0px !important;
   background: url('../img/rough_border_green.svg') center bottom -14px no-repeat;
   background-size: auto;
   @media (min-width: $breakpoint-desktop) {
+    padding: $padding 0px !important;
     background: url('../img/rough_border_green.svg') center bottom -17px no-repeat;
     background-size: contain;
   }
@@ -95,12 +96,19 @@
     border: none;
     p {
       display: inline-block;
-      font: $normal 5.2rem/5.6rem $headline;
-      text-transform: uppercase;
+      font: $bold 2.4rem/3.2rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 5.2rem/5.6rem $headline;
+        text-transform: uppercase;
+      }
+      
       margin-bottom: 20px;
     }
     footer {
-      font: $normal 2.4rem/3.2rem $regular;
+      font: $normal 2.0rem/2.8rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 2.4rem/3.2rem $regular;
+      }
     }
   }
   .slick-prev, .slick-next {
@@ -123,11 +131,13 @@
 
 .activities-list {
   text-align: center;
-  padding: $padding 0 0 0;
+  
   color: $red;
+  padding: $padding 0 $padding-half 0;
   background: url('../img/rough_border_green.svg') center top -14px no-repeat;
   background-size: auto;
   @media (min-width: $breakpoint-desktop) {
+    padding: $padding 0;
     background: url('../img/rough_border_green.svg') center top -20px no-repeat;
     background-size: contain;
   }
@@ -179,19 +189,21 @@
   }
   .slick-prev, .slick-next {
     top: 45%;
-    @media (max-width: $breakpoint-tablet) {
-      height: 0;
-      width: 0;
-      visibility: hidden;
-    }
+    
   }
   .slick-prev {
     left: -80px;
     background: url('../img/slider_left_red.svg') center center no-repeat;
+    @media (max-width: $breakpoint-tablet) {
+      left: 0;
+    }
   }
   
   .slick-next {
     right: -80px;
     background: url('../img/slider_right_red.svg') center center no-repeat;
+    @media (max-width: $breakpoint-tablet) {
+      right: 0;
+    }
   }
 }

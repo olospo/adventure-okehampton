@@ -7,6 +7,27 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
   var width = $(this).width(); // The window width
   if (width > 768) {
     $('nav.mobile').hide();
+    
+    // Back to Top Scroll 
+    var amountScrolled = 100;
+    
+    $(window).scroll(function() {
+    	if ( $(window).scrollTop() > amountScrolled ) {
+    		$('a.back_to_top').fadeIn('slow');
+    	} else {
+    		$('a.back_to_top').fadeOut('slow');
+    	}
+    });
+    
+    $('a.back_to_top').click(function() {
+    	$('html, body').animate({
+    		scrollTop: 0
+    	}, 700);
+    	return false;
+    });
+
+    
+    
   }
 });
 
@@ -155,23 +176,6 @@ $('.activity-scroll').slick({
   ]
 });
 
-// Back to Top Scroll 
-var amountScrolled = 100;
-
-$(window).scroll(function() {
-	if ( $(window).scrollTop() > amountScrolled ) {
-		$('a.back_to_top').fadeIn('slow');
-	} else {
-		$('a.back_to_top').fadeOut('slow');
-	}
-});
-
-$('a.back_to_top').click(function() {
-	$('html, body').animate({
-		scrollTop: 0
-	}, 700);
-	return false;
-});
 
 // SVG as Images
 $(function(){
