@@ -338,7 +338,7 @@ footer {
         }
       }
       ul {
-        margin: 10px 0px 10px 0px;
+        margin: 10px 0px;
         li {
           display: block;
           border-right: none;
@@ -358,6 +358,9 @@ footer {
           &:last-child {
             border-right: none;
           }
+        }
+        &.credit {
+          margin-top: 20px;
         }
       }
     }
