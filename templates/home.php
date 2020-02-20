@@ -9,13 +9,14 @@ $videoType = get_field('upload_or_link');
 $videoLink = get_field('link_video');
 $videomp4 = get_field('upload_video_mp4');
 $videowebm = get_field('upload_video_webm');
+$videoFallback = get_field('mobile_fallback_image');
 
 while ( have_posts() ) : the_post(); ?>
 
 <section class="home hero <?php if ( $videoType == 'link' ): // Video Link ?>video-link<?php endif; ?>" <?php if( $heroType == 'image' ): ?> style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;"<?php endif; ?>>
   <?php if( $heroType == 'video' ): ?>
     <?php if ( $videoType == 'link' ): // Video Link ?>
-    <div class="video-area">
+    <div class="video-area" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $videoFallback['url']; ?> ') center center no-repeat; background-size: cover;">
       <?php
       // get iframe HTML
       $iframe = get_field('video');
@@ -47,15 +48,15 @@ while ( have_posts() ) : the_post(); ?>
     </div>
     <?php endif; ?>
     <?php if ( $videoType == 'upload' ): // Video Upload ?>
-      <div class="video-upload">
-        <video muted autoplay preload="auto" loop>
-          <source src="<?php echo $videomp4; ?>" type="video/mp4">
-          <source src="<?php echo $videowebm; ?>" type="video/webm">
-        </video>
-      </div>
+    <div class="video-upload hidden-mobile" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' <?php echo $videoFallback['url']; ?> ') center center no-repeat; background-size: cover;">
+      <video muted autoplay preload="auto" loop>
+        <source src="<?php echo $videomp4; ?>" type="video/mp4">
+        <source src="<?php echo $videowebm; ?>" type="video/webm">
+      </video>
+    </div>
     <?php endif; ?>
   <?php endif; ?>
-  <div class="float <?php if( $videoType == 'upload' ): ?>video<?php endif; ?>">
+  <div class="float <?php if( $heroType == 'video' && $videoType == 'upload' ): ?>video<?php endif; ?>">
     <div class="container">
       <div class="content eight columns offset-by-two">
       <h1><?php echo $title; ?></h1>

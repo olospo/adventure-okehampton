@@ -71,6 +71,27 @@
   .button {
     margin: 10px;
   }
+  // Remove video on mobile and show background image
+  .video-upload {
+    @media (max-width: $breakpoint-tablet) {
+      video {
+        display: none;
+      }
+    }
+    @media (min-width: $breakpoint-tablet) {
+      background: none !important;    
+    }
+  }
+  .video-area {
+    @media (max-width: $breakpoint-tablet) {
+      iframe {
+        display: none;
+      }
+    }
+    @media (min-width: $breakpoint-tablet) {
+      background: none !important;    
+    }
+  }
 }
 
 .quick_links {
