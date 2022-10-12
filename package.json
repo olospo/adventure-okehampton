@@ -27,7 +27,7 @@
     "merge-stream": "^1.0.1",
     "node-sass": "^4.5.0",
     "npm": "^6.9.0",
-    "svg-sprite": "^1.4.0"
+    "svg-sprite": "^1.5.4"
   },
   "devDependencies": {
     "gulp-sass": "^4.0.2"
